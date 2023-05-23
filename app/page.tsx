@@ -1,9 +1,11 @@
 import Link from "next/link"
 import Navbar from "./components/navbar"
+import { Analytics } from '@vercel/analytics/react'
 
 export default function Page() {
 	return (
 		<div>
+			<Analytics />
 			<Navbar />
 			<div className="max-w-5xl mx-auto px-10 py-12">
 				<div className="flex flex-col gap-2.5">

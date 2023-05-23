@@ -11,7 +11,7 @@ export default function Page() {
 				<div className="flex flex-col gap-2.5">
 					<h1 className="font-semibold text-3xl">Devin Vasavong</h1>
 					<div className="text-slate-500">
-						<p>Software Engineering Student at{' '} <Link href="https://rit.edu" className="underline">Rochester Institute of Technology</Link></p>
+						<p>Software Engineering Student at <Link href="https://rit.edu" className="underline">Rochester Institute of Technology</Link></p>
 					</div>
 				</div>
 				<div className="flex flex-row gap-2.5 mt-[1rem]">

@@ -33,9 +33,7 @@ export default function Page() {
 				</div>
 				<div className="mt-[2rem] sm:mt-[5rem]">
 					<h2 className="font-semibold uppercase text-sm text-slate-500">About me</h2>
-					<p>
-						Hi, my name is Devin Vasavong and I'm Laotion-American. I'm currently a 2nd year (as of Fall 2023) Software Engineering student at RIT. A fun fact about me is that I am an early graduate who graduated at the age of 16. I'm a very passionate coder!
-					</p>
+					<p>Hi, my name is Devin Vasavong and I'm Laotion-American. I'm currently a 2nd year (as of Fall 2023) Software Engineering student at RIT. A fun fact about me is that I am an early graduate who graduated at the age of 16. I'm a very passionate coder!</p>
 				</div>
 			</div>
 		</div>

@@ -10,17 +10,16 @@ export default function Page() {
 			<div className="max-w-5xl mx-auto px-10 py-12">
 				<div className="flex flex-col gap-2.5">
 					<h1 className="font-semibold text-3xl">Devin Vasavong</h1>
-					<div className="flex flex-col sm:flex-row text-slate-500">
-						<p>Software Engineering Student at&nbsp;</p>
-						<Link href="https://rit.edu" className="underline">Rochester Institute of Technology</Link>
+					<div className="text-slate-500">
+						<p>Software Engineering Student at{' '} <Link href="https://rit.edu" className="underline">Rochester Institute of Technology</Link></p>
 					</div>
 				</div>
 				<div className="flex flex-row gap-2.5 mt-[1rem]">
-					{/* <Link href="mailto:devin@vasavong.com?subject=Portfolio Inquiry">
+					<Link href="mailto:devin@vasavong.com?subject=Portfolio Inquiry">
 						<div className="px-3 py-0.5 bg-gray-200 rounded-full">
 							Email
 						</div>
-					</Link> */}
+					</Link>
 					<Link href="https://drive.google.com/file/d/1f2OiCsq-c4d1L_O2T7Pj78mX9BMhi3Dr/view?usp=sharing">
 						<div className="px-3 py-0.5 bg-gray-200 rounded-full">
 							Resume

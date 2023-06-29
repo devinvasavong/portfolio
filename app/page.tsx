@@ -20,11 +20,11 @@ export default function Page() {
 							Email
 						</div>
 					</Link>
-					<Link href="https://drive.google.com/file/d/1f2OiCsq-c4d1L_O2T7Pj78mX9BMhi3Dr/view?usp=sharing">
+					{/* <Link href="https://drive.google.com/file/d/1f2OiCsq-c4d1L_O2T7Pj78mX9BMhi3Dr/view?usp=sharing">
 						<div className="px-3 py-0.5 bg-gray-200 rounded-full">
 							Resume
 						</div>
-					</Link>
+					</Link> */}
 					<Link href="https://linkedin.com/in/devinvasavong">
 						<div className="px-3 py-0.5 bg-gray-200 rounded-full">
 							LinkedIn
@@ -34,6 +34,18 @@ export default function Page() {
 				<div className="mt-[2rem] sm:mt-[5rem]">
 					<h2 className="font-semibold uppercase text-sm text-slate-500">About me</h2>
 					<p>Hi, my name is Devin Vasavong and I&apos;m Laotion-American. I&apos;m currently a 2nd year (as of Fall 2023) Software Engineering student at RIT. A fun fact about me is that I am an early graduate who graduated at the age of 16. I&apos;m a very passionate coder!</p>
+				</div>
+				<div className="mt-[2rem] sm:mt-[5rem]">
+					<h2 className="font-semibold uppercase text-sm text-slate-500">Projects</h2>
+					<p>
+						Nothing to see here yet! Check back later.
+					</p>
+				</div>
+				<div className="mt-[2rem] sm:mt-[5rem]">
+					<h2 className="font-semibold uppercase text-sm text-slate-500">Contact me</h2>
+					<p>
+						I am open to opportunities! Feel free to contact me <Link href="mailto:devin@vasavong.com?subject=Contact Inquiry" className="underline">here</Link>!
+					</p>
 				</div>
 			</div>
 		</div>

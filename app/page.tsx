@@ -15,7 +15,7 @@ export default function Page() {
 
 					<Image alt="Screenshot of the project I'm working on" src={Logo} />
 					<p className="text-xs font-normal italic">
-						Something I've been working on that uses an access key given to corporate clients
+						Something I&aposve been working on that uses an access key given to corporate clients
 					</p>
 
 				</div>

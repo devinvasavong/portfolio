@@ -1,6 +1,9 @@
 import Navbar from "./components/navbar"
 import Card from "./components/card"
 import Link from "next/link"
+import Image from "next/image"
+
+import Logo from '@/public/teleprompt.png'
 
 export default function Page() {
 	return (
@@ -9,13 +12,12 @@ export default function Page() {
 
 			<div className="mx-auto max-w-5xl p-10">
 				<div>
-					Please pardon our dust, this site is still under construction.
 
-					<div className="mt-10">
-						<Link href="https://linkedin.com/in/devinvasavong" className="text-blue-500 underline">
-							LinkedIn
-						</Link>
-					</div>
+					<Image alt="Screenshot of the project I'm working on" src={Logo} />
+					<p className="text-xs font-normal italic">
+						Something I've been working on that uses an access key given to corporate clients
+					</p>
+
 				</div>
 			</div>
 		</div>

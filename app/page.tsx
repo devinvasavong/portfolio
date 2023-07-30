@@ -31,10 +31,10 @@ export default function Page() {
 								</p>
 							</div>
 							<div className="max-w-[250px] md:max-w-[300px] bg-gray-100 p-5 rounded-lg shrink-0">
-								<h2 className="text-[18px] font-semibold">
+								<h2 className="text-[18px] text-[#949494] font-medium">
 									Custom Ordering App
 								</h2>
-								<p className="text-[14px] text-[#949494]">
+								<p className="text-[14px] text-[#949494] font-medium">
 									Created using Expo for a local business. Connects with API to get data and allows users to order custom products.
 								</p>
 							</div>

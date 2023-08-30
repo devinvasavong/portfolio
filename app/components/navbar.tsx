@@ -11,7 +11,7 @@ export default function Navbar() {
             <div className="max-w-5xl mx-auto px-10 border-b-[rgba(171,171,171,.1)] border-b-[1px] py-5">
                 <div className="flex flex-row justify-between w-full">
                     <div className="text-sm">vasavong.dev</div>
-                    <div className="hidden sm:flex">
+                    {/* <div className="hidden sm:flex">
                         <div className="w-full flex flex-row gap-1">
                             <Link href="https://linkedin.com/in/devinvasavong" className="text-sm text-[#949494] underline">
                                 LinkedIn
@@ -52,7 +52,7 @@ export default function Navbar() {
                                 </Link>
                             </div>
                         )
-                    }
+                    } */}
                 </div>
             </div>
         </nav>

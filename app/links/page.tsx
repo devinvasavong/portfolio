@@ -30,6 +30,7 @@ export default function Links() {
                     <Card title="Read.cv" link="https://read.cv/cdv" />
                     <Card title="LinkedIn" link="https://linkedin.com/in/devinvasavong" caption="Connect with me" />
                     <Card title="Github" link="https://github.com/devinvasavong" />
+                    <Card title="Email" link="mailto:devin@vasavong.com" />
                 </div>
             </div>
         </div>

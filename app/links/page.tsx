@@ -28,9 +28,8 @@ export default function Links() {
             <div className="mx-auto max-w-5xl p-10">
                 <div className="grid-cols-1 flex flex-col gap-2 transition-all duration-300">
                     <Card title="Read.cv" link="https://read.cv/cdv" />
-                    <Card title="Twitter" link="https://twitter.com/devinvasavong" />
                     <Card title="LinkedIn" link="https://linkedin.com/in/devinvasavong" caption="Connect with me" />
-                    <Card title="Instagram" link="https://instagram.com/cdvasavong" />
+                    <Card title="Github" link="https://github.com/devinvasavong" />
                 </div>
             </div>
         </div>

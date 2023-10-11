@@ -27,6 +27,7 @@ export default function Links() {
             <Navbar />
             <div className="mx-auto max-w-5xl p-10">
                 <div className="grid-cols-1 flex flex-col gap-2 transition-all duration-300">
+                    <Card title="Main Page" link="https://vasavong.dev/" />
                     <Card title="Read.cv" link="https://read.cv/cdv" />
                     <Card title="LinkedIn" link="https://linkedin.com/in/devinvasavong" caption="Connect with me" />
                     <Card title="Github" link="https://github.com/devinvasavong" />

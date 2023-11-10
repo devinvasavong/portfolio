@@ -1,9 +1,10 @@
 /** @type {import('next').NextConfig} */
-const withFonts = require('next-fonts')
-const nextConfig = {}
-
-module.exports = withFonts({
-    webpack(nextConfig, options) {
-        return nextConfig
+const nextConfig = {
+    images: {
+        domains: ["vasavong.dev", "cdn.vasavong.dev"]
     }
-})
+}
+
+// src prop
+
+module.exports = nextConfig

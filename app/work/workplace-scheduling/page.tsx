@@ -58,6 +58,14 @@ export default function Page() {
                         <Image src={main_page} alt="Image of the shifts page" />
                         Displayed is an image of the shifts page
                     </div>
+                    <div className="text-xs italic text-gray-400 py-3">
+                        <Image src={"https://cdn.vasavong.dev/new_announcements_page.png"} width={1920} height={1080} alt="Image of the shifts page" />
+                        Displayed is an image from our announcements page
+                    </div>
+                    <div className="text-xs italic text-gray-400 py-3">
+                        <Image src={"https://cdn.vasavong.dev/new_shift_page.png"} width={1920} height={1080} alt="Image of the shifts page" />
+                        Displayed is an image from our new shifts page
+                    </div>
                 </motion.div>
             </div>
         </div>

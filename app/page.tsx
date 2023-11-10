@@ -64,7 +64,7 @@ export default function Main() {
                             <p className="text-sm text-gray-400">Personal Project + Collaborators</p>
                         </div>
                         <Link href="/" aria-label="link to workplace scheduling project page">
-                            <p className="text-gray-400 text-sm hover:underline cursor-not-allowed">View Project</p>
+                            <p className="text-red-500 text-sm hover:underline cursor-not-allowed">Work in progress</p>
                         </Link>
                     </div>
                 </div>

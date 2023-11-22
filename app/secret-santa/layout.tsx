@@ -1,6 +1,5 @@
 
 // Image for metadata
-import { Head } from "next/document"
 
 export const metadata = {
     title: "Secret Santa List",

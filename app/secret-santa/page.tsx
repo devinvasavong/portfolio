@@ -1,0 +1,99 @@
+import Link from "next/link";
+
+export default function SecretSanta() {
+    return (
+        <div className="w-screen h-screen">
+            <div className="w-full h-full p-10">
+                <h1 className="font-medium text-lg">Devin&apos;s List</h1>
+                <p className="text-sm font-medium mt-3 mb-1">Anything clothing related is well appreciated</p>
+                <p className="mb-3">
+                    <span className="font-medium text-sm">Reference</span>
+                    <br />
+                    <span className="text-gray-400 text-sm">Shirt: Small</span>
+                    <br />
+                    <span className="text-gray-400 text-sm">Pants: 29X30 / 30X30</span>
+                    <br />
+                    <span className="text-gray-400 text-sm">Shoes: 9.5-10</span>
+                    <br />
+                    <span className="text-gray-400 text-sm">Socks: Medium (based off shoe size)</span>
+                    <br />
+                    <span className="text-gray-400 text-sm">Hoodies: Small</span>
+                </p>
+                <div>
+                    <section className="my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+                        <div>
+                            <div className="w-full flex items-center justify-between text-sm border-b pb-3">
+                                <span className="font-medium">Abercrombie Clothing</span>
+                                <div className="py-0.5 px-2.5 bg-yellow-100 text-yellow-500 rounded-full">
+                                    Highly consider
+                                </div>
+                            </div>
+                            <ol className="text-sm space-y-1 mt-3 list-decimal ml-5">
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.abercrombie.com/shop/us/p/long-sleeve-grid-waffle-tee-53234322?categoryId=6570709&faceout=prod&seq=06" className="underline">Waffle Tee</Link>
+                                        <span className="text-gray-400 text-xs">$50, size small</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Black, Cream, Light Brown Heather</span>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.abercrombie.com/shop/us/p/athletic-loose-jean-54638920?faceout=model&seq=02" className="underline">Athletic Loose Jean</Link>
+                                        <span className="text-gray-400 text-xs">$80, 30X30</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Black</span>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <div className="w-full flex items-center justify-between text-sm border-b pb-3">
+                                <span className="font-medium">Technology</span>
+                            </div>
+                            <ol className="text-sm space-y-1 mt-3 list-decimal ml-5">
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.apple.com/us-edu/shop/product/MHJA3AM/A/20w-usb-c-power-adapter?fnode=48305efadbdba9ce8b443715bf1803787f8b735a32fd2791e75dce83a7beb1bf7db0c9bf1bc2b466bff340d7e011400908c68d9ff42d9076970bab11cbda3f2b11dcbc75a0ae1f9eab871cd515165833c791094537b45f84a7b7c1b866d3102c" className="underline">20W USB C Power Adapter</Link>
+                                        <span className="text-gray-400 text-xs">$19</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.apple.com/us-edu/shop/product/MQKJ3AM/A/60w-usb-c-charge-cable-1-m?fnode=767cea6e818aa3a54326664b8edd38e073690b8cba043554633af135a9365241f2ea6175edce5ccb1625564bcdd83792e357726e3c2b8336d340d391a7417d6579c18c66c8268834fbe3ad81be287c028e30aa8da242d8ee201f70e8379a16fe" className="underline">USB C to USB C</Link>
+                                        <span className="text-gray-400 text-xs">$19</span>
+                                    </div>
+                                </li>
+                            </ol>
+                        </div>
+                        <div>
+                            <div className="w-full flex items-center justify-between text-sm border-b pb-3">
+                                <span className="font-medium">Miscellaneous</span>
+                            </div>
+                            <ol className="text-sm space-y-1 mt-3 list-decimal ml-5">
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.sephora.com/product/P411325?skuId=1988245" className="underline">Versace Dylan Blue</Link>
+                                        <span className="text-gray-400 text-xs">$130</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.nike.com/t/everyday-plus-cushioned-training-crew-socks-6-pairs-vlRw4Q/SX6897-100" className="underline">Nike Socks</Link>
+                                        <span className="text-gray-400 text-xs">$28</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Medium</span>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.nike.com/t/therma-mens-therma-fit-open-hem-fitness-pants-DbPGBc/DQ4856-010" className="underline">Nike Therma</Link>
+                                        <span className="text-gray-400 text-xs">$65</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Small</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    )
+}

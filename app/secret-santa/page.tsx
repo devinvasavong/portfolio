@@ -5,6 +5,7 @@ export default function SecretSanta() {
         <div className="w-screen h-screen">
             <div className="w-full h-full p-10">
                 <h1 className="font-medium text-lg">Devin&apos;s List</h1>
+                <p className="text-xs">Updated 11/27/23 at 12:46PM</p>
                 <p className="text-sm font-medium mt-3 mb-1">Anything clothing related is well appreciated</p>
                 <p className="mb-3">
                     <span className="font-medium text-sm">Reference</span>
@@ -62,6 +63,12 @@ export default function SecretSanta() {
                                         <span className="text-gray-400 text-xs">$19</span>
                                     </div>
                                 </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.amazon.com/dp/B09VP9QJSS?ref_=cm_sw_r_apin_dp_8NYAHN2F0HQYFAQDZ62S&language=en-US&th=1" className="underline">Anker Portable Charger w/ USB-C support</Link>
+                                        <span className="text-gray-400 text-xs">$63.98</span>
+                                    </div>
+                                </li>
                             </ol>
                         </div>
                         <div>
@@ -88,6 +95,32 @@ export default function SecretSanta() {
                                         <span className="text-gray-400 text-xs">$65</span>
                                     </div>
                                     <span className="text-gray-400 text-xs">Small</span>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.amazon.com/AncestryDNA-Genetic-Testing-Ethnicity-Traits/dp/B07J1FZQBC/ref=sr_1_1_sspa?keywords=ancestry&qid=1701106812&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" className="underline">AncestryDNA</Link>
+                                        <span className="text-gray-400 text-xs">$49</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Saw this from Gina</span>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.hydroflask.com/32-oz-wide-mouth-with-flex-straw-cap#color=Driftwood" className="underline">Hydroflask</Link>
+                                        <span className="text-gray-400 text-xs">$37.46</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Driftwood</span>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.purehockey.com/product/hockeyshot-extreme-passing-kit-4-x-8-5/itm/26562-2/" className="underline">Hockey passing kit</Link>
+                                        <span className="text-gray-400 text-xs">$209.99</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://www.purehockey.com/product/hockeyshot-synthetic-ice-revolution-tiles-10-pack/itm/37356-2/" className="underline">Synthetic ice</Link>
+                                        <span className="text-gray-400 text-xs">$149.99</span>
+                                    </div>
                                 </li>
                             </ol>
                         </div>

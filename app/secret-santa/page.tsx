@@ -24,7 +24,7 @@ export default function SecretSanta() {
                     <section className="my-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
                         <div>
                             <div className="w-full flex items-center justify-between text-sm border-b pb-3">
-                                <span className="font-medium">Abercrombie Clothing</span>
+                                <span className="font-medium">Clothing</span>
                                 <div className="py-0.5 px-2.5 bg-yellow-100 text-yellow-500 rounded-full">
                                     Highly consider
                                 </div>
@@ -41,6 +41,13 @@ export default function SecretSanta() {
                                     <div className="flex justify-between items-center">
                                         <Link href="https://www.abercrombie.com/shop/us/p/athletic-loose-jean-54638920?faceout=model&seq=02" className="underline">Athletic Loose Jean</Link>
                                         <span className="text-gray-400 text-xs">$80, 30X30</span>
+                                    </div>
+                                    <span className="text-gray-400 text-xs">Black</span>
+                                </li>
+                                <li>
+                                    <div className="flex justify-between items-center">
+                                        <Link href="https://shop.lululemon.com/p/mens-trousers/ABC-Classic-Fit-Trouser-30-Warpstreme/_/prod11500067?color=0001&sz=29" className="underline">Lululemon ABC Trousers</Link>
+                                        <span className="text-gray-400 text-xs">$128, 29X30</span>
                                     </div>
                                     <span className="text-gray-400 text-xs">Black</span>
                                 </li>

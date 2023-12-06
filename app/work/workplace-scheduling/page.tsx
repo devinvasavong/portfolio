@@ -65,14 +65,6 @@ export default function Page() {
                             Displayed is an image of the shifts page
                         </div>
                     </div>
-                    <div className="text-xs italic text-gray-400 py-3">
-                        <Image src={"https://cdn.vasavong.dev/new_announcements_page.png"} width={1920} height={1080} alt="Image of the shifts page" />
-                        Displayed is an image from our announcements page
-                    </div>
-                    <div className="text-xs italic text-gray-400 py-3">
-                        <Image src={"https://cdn.vasavong.dev/new_shift_page.png"} width={1920} height={1080} alt="Image of the shifts page" />
-                        Displayed is an image from our new shifts page
-                    </div>
                     <section id="register" className="flex flex-col md:flex-row space-x-3 items-start justify-center bg-gray-100 py-10 rounded-lg mt-3">
                         <p>
                             Interested in trying out Shiftlist? <a href="mailto:devin@vasavong.com?subject=Register for Shiftlist" className="text-blue-500 hover:text-blue-600">Register here</a>

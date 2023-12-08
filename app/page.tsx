@@ -8,9 +8,9 @@ import Navbar from './components/navbar';
 
 export default function Main() {
     return (
-        <div className="px-10 w-screen sm:max-w-6xl mx-auto">
+        <div className="w-screen sm:max-w-6xl mx-auto">
             <Navbar />
-            <motion.div className="py-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }} >
+            <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }} >
                 <p>
                     Hi, my name is Devin Vasavong. I&#39;m a second year software engineering student at{' '}
                     <Link aria-label="link to rit website" href="https://rit.edu" target="_blank" className="text-[#F76902] font-semibold hover:underline">Rochester Institute of Technology.</Link>
@@ -26,7 +26,7 @@ export default function Main() {
                     If there are any questions regarding my skills, projects, or anything else, please contact me using the email listed above as well.
                 </p>
             </motion.div>
-            <motion.div className="py-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
+            <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
                 <h1 className="font-bold pb-3 text-lg">Experience</h1>
                 <div className="space-y-3">
                     <div className="flex justify-between items-start">
@@ -46,7 +46,7 @@ export default function Main() {
                     </div>
                 </div>
             </motion.div>
-            <motion.div className="py-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 2 }} >
+            <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 2 }} >
                 <h1 className="font-bold pb-3 text-lg">Projects</h1>
                 <div className="space-y-3">
                     <div className="flex justify-between items-start">
@@ -55,7 +55,7 @@ export default function Main() {
                             <p className="text-sm text-gray-400">Personal Project + Collaborator</p>
                         </div>
                         <Link href="/work/workplace-scheduling" aria-label="link to workplace scheduling project page">
-                            <p className="text-gray-400 text-sm hover:underline cursor-pointer">View Project</p>
+                            <p className="text-sm cursor-pointer bg-gray-200 text-black hover:bg-black hover:text-gray-200 px-2.5 py-0.5 rounded-lg transition-all duration-300">View Project</p>
                         </Link>
                     </div>
                     <div className="flex justify-between items-start">
@@ -64,7 +64,7 @@ export default function Main() {
                             <p className="text-sm text-gray-400">Personal Project + Collaborators</p>
                         </div>
                         <Link href="/" aria-label="link to workplace scheduling project page">
-                            <p className="text-red-500 text-sm hover:underline cursor-not-allowed">Work in progress</p>
+                            <p className="text-red-500 text-sm cursor-not-allowed">Work in progress</p>
                         </Link>
                     </div>
                 </div>

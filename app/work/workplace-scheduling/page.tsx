@@ -40,35 +40,21 @@ export default function Page() {
                         </div>
                     </div>
                 </motion.div>
-                <motion.div className="py-10 flex-col" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
-                    <div className="flex flex-col md:flex-row space-x-3 items-start justify-center">
-                        <p className="md:w-1/2">
+                <motion.div className="py-10 flex-col flex space-y-4" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
+                    <div className="flex flex-col md:flex-row items-start gap-4">
+                        <p className="w-full order-1 md:order-0 md:1/3">
                             I wanted to create something that would benefit small businesses and their employees. I decided to create a scheduling system that is affordable and effective.
                             <br/>
                             <br/>
                             Workplace scheduling software is usually expensive and hard to use. Shiftlist elimates both of those problems by providing a simple and easy to use interface.
                         </p>
-                        <div className="text-xs italic text-gray-400 py-3 md:w-1/2">
-                            <Image src={main_image} alt="Image of the login page" />
-                            Displayed is an image of the login page
+                        <div className="w-full order-0 md:order-1 md:2/3">
+                            <Image src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1920} height={1080} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm" />
                         </div>
                     </div>
-                    <div className="flex flex-col md:flex-row space-x-3 items-start justify-center">
-                        <p className="md:w-1/2">
-                            Shiftlist is a web application that allows employees to view their schedule and request time off. Managers can create schedules, view employee requests, and approve/deny them.
-                            <br/>
-                            <br/>
-                            We are currently working on redesigning some of the pages and adding new features. We are also working on a mobile application that will allow employees to view their schedule and request time off.
-                        </p>
-                        <div className="text-xs italic text-gray-400 py-3 md:w-1/2">
-                            <Image src={main_page} alt="Image of the shifts page" />
-                            Displayed is an image of the shifts page
-                        </div>
-                    </div>
-                    <section id="register" className="flex flex-col md:flex-row space-x-3 items-start justify-center bg-gray-100 py-10 rounded-lg mt-3">
-                        <p>
-                            Interested in trying out Shiftlist? <a href="mailto:devin@vasavong.com?subject=Register for Shiftlist" className="text-blue-500 hover:text-blue-600">Register here</a>
-                        </p>
+                    <section className="flex flex-col space-y-1 bg-black rounded-md p-4 text-white">
+                        <h2 className="font-semibold">Interested in Shiftlist?</h2>
+                        <p className="text-sm">Shiftlist is currently in development. If you are interested in using Shiftlist, please contact me at <a href="mailto:devin@vasavong?subject=Re: Shiftlist" className="text-blue-500 hover:underline">here</a>.</p>
                     </section>
                 </motion.div>
             </div>

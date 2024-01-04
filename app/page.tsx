@@ -61,7 +61,7 @@ export default function Main() {
                     <div className="flex justify-between items-start">
                         <div>
                             <p className="font-medium">Teleprompting Service</p>
-                            <p className="text-sm text-gray-400">Personal Project + Collaborators</p>
+                            <p className="text-sm text-gray-400 text-center">Personal Project + Collaborators</p>
                         </div>
                         <Link href="/" aria-label="link to workplace scheduling project page">
                             <p className="text-red-500 text-sm cursor-not-allowed">Work in progress</p>

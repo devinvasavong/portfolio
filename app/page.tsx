@@ -26,7 +26,7 @@ export default function Main() {
                     If there are any questions regarding my skills, projects, or anything else, please contact me using the email listed above as well.
                 </p>
             </motion.div>
-            <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
+            {/* <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
                 <h1 className="font-bold pb-3 text-lg">Experience</h1>
                 <div className="space-y-3">
                     <div className="flex justify-between items-start">
@@ -45,7 +45,7 @@ export default function Main() {
                         </ul>
                     </div>
                 </div>
-            </motion.div>
+            </motion.div> */}
             <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 2 }} >
                 <h1 className="font-bold pb-3 text-lg">Projects</h1>
                 <div className="space-y-3">

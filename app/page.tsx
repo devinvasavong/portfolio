@@ -4,6 +4,7 @@ import * as React from 'react';
 import { motion } from 'framer-motion'
 import Link from 'next/link';
 import Navbar from './components/navbar';
+import Image from 'next/image';
 
 
 export default function Main() {
@@ -14,7 +15,7 @@ export default function Main() {
                 <p>
                     Hi, my name is Devin Vasavong. I&#39;m a second year software engineering student at{' '}
                     <Link aria-label="link to rit website" href="https://rit.edu" target="_blank" className="text-[#F76902] font-semibold hover:underline">Rochester Institute of Technology.</Link>
-                    <br/>
+                    {/* <br/>
                     <br/>
                     I have a strong passion for creating side projects and love to work in a collaborative team. I am currently working on a
                     Teleprompting and HRMS service. Both of which are created using Next.js!
@@ -23,7 +24,7 @@ export default function Main() {
                     As of October 11, 2023, I am looking for a summer/fall 2024 co-op in full-stack development. If I seem to fit into this criteria, please contact me using the email listed above.
                     <br/>
                     <br/>
-                    If there are any questions regarding my skills, projects, or anything else, please contact me using the email listed above as well.
+                    If there are any questions regarding my skills, projects, or anything else, please contact me using the email listed above as well. */}
                 </p>
             </motion.div>
             {/* <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
@@ -49,14 +50,19 @@ export default function Main() {
             <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 2 }} >
                 <h1 className="font-bold pb-3 text-lg">Projects</h1>
                 <div className="space-y-3">
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <p className="font-medium">Workplace Scheduling (Shift List)</p>
-                            <p className="text-sm text-gray-400">Personal Project + Collaborator</p>
+                    <div className="sm:flex items-center gap-4">
+                        <div className="sm:w-1/12 sm:mb-0 mb-2">
+                            <Image src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1920} height={1080} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm" />
                         </div>
-                        <Link href="/work/workplace-scheduling" aria-label="link to workplace scheduling project page">
-                            <p className="text-sm cursor-pointer bg-gray-200 text-black hover:bg-black hover:text-gray-200 px-2.5 py-0.5 rounded-lg transition-all duration-300">View Project</p>
-                        </Link>
+                        <div className="flex justify-between items-center w-full sm:w-11/12">
+                            <div className="flex flex-col">
+                                <p className="font-medium">Workplace Scheduling (Shift List)</p>
+                                <p className="text-sm text-gray-400">Personal Project + Collaborator</p>
+                            </div>
+                            <Link href="/work/workplace-scheduling" aria-label="link to workplace scheduling project page">
+                                <p className="text-center text-sm cursor-pointer bg-gray-200 text-black hover:bg-black hover:text-gray-200 px-2.5 py-0.5 rounded-lg transition-all duration-300">View Project</p>
+                            </Link>
+                        </div>
                     </div>
                     <div className="flex justify-between items-start">
                         <div>
@@ -64,7 +70,7 @@ export default function Main() {
                             <p className="text-sm text-gray-400 text-center">Personal Project + Collaborators</p>
                         </div>
                         <Link href="/" aria-label="link to workplace scheduling project page">
-                            <p className="text-red-500 text-sm cursor-not-allowed">Work in progress</p>
+                            <p className="text-red-500 text-sm cursor-not-allowed text-center">Work in progress</p>
                         </Link>
                     </div>
                 </div>

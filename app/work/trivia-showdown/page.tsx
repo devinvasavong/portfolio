@@ -50,7 +50,8 @@ export default function Page() {
                     </div>
                 </div>
                 <motion.div className="flex flex-col space-y-1 mt-3" initial={{ y: 2, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }}>
-                    <Link href="https://github.com/devinvasavong/portfolio" aria-label="Link to github" className="text-sm text-blue-500 hover:underline">Github Repo</Link>
+                    <Link href="https://github.com/devinvasavong/survey-nextjs" aria-label="Link to github (survey nextjs)" className="text-sm text-blue-500 hover:underline">Github Repo</Link>
+                    <Link href="https://github.com/devinvasavong/survey" aria-label="Link to github (survey html)" className="text-sm text-blue-500 hover:underline">Github Repo</Link>
                     <p className="text-gray-400 font-medium text-sm">Contributor</p>
                     <div className="flex flex-row space-x-1">
                         <div className="group/div">

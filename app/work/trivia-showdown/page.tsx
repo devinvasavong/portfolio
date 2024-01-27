@@ -103,6 +103,15 @@ export default function Page() {
                                 </ol>
                             </div>
                             <p>This refines the traditional trivia game by using the power of real-time interactivity on our most recent LED screen. This project not only brings togetherness, but it turns a simple game of trivia to an adventure for all using technology.</p>
+                            <div className="my-4 flex sm:flex-row flex-col gap-4 items-start">
+                                <div className="sm:w-1/2 order-0 sm:order-1 flex-shrink-0">
+                                    <Image src="https://cdn.vasavong.dev/images/first_it.png" width={1280} height={720} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm w-full h-full object-cover" />
+                                </div>
+                                <div className="sm:w/12 sm:order-0 order-1 flex flex-col">
+                                    <h3 className="font-medium">First Iteration</h3>
+                                    <p className="text-sm">The first iteration of this project was a simple web application that allowed users to join a trivia game and answer questions. However, the questions were displayed on the client side coded fully in HTML, CSS, and Vanilla JS.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </motion.div>

@@ -28,7 +28,7 @@ export default function Page() {
             <nav className={`transition-all duration-300 sticky top-0 z-50 bg-white ${scrolled ? "border-b py-3" : "py-5"}`}>
                 <div className="mx-auto w-11/12 sm:max-w-5xl items-center justify-between flex">
                     <p className="text-sm font-medium">Devin Vasavong</p>
-                    <ol className="gap-2">
+                    <ol className="gap-2 flex">
                         <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
                             <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</Link>
                         </li>

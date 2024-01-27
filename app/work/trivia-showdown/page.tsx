@@ -94,7 +94,7 @@ export default function Page() {
                                     </li>
                                     <li>
                                         <h3 className="font-medium">Dynamic LED Screen</h3>
-                                        <p className="text-sm">The trivia game(s) would be displayed automatically on the SHED screen as an "intermission" between the regular content.</p>
+                                        <p className="text-sm">The trivia game(s) would be displayed automatically on the SHED screen as an &quot;intermission&quot; between the regular content.</p>
                                     </li>
                                     <li>
                                         <h3 className="font-medium">Leaderboard</h3>

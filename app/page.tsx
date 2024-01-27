@@ -41,7 +41,7 @@ export default function Main() {
                     </div>
                 </nav>
                 <section className="mx-auto max-w-5xl px-5 my-10 flex flex-row gap-2 items-center justify-center">
-                    <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden sm:block hidden">
                         <Image className="rounded-full" src="https://cdn.vasavong.dev/images/Devin_Portrait-084.jpg" width={100} height={100} alt="Collaborator" />
                     </div>
                     <h1 className="font-medium text-3xl text-center">Aspiring Full-Stack Developer</h1>

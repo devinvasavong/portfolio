@@ -82,7 +82,7 @@ export default function Page() {
                                         className="rounded-md border shadow-sm w-full h-full object-cover"
                                     />
                                 </div>
-                                <p>Trivia showdown is an innovative and engaging project that brings excitement of live, real-time trivia to users through a web application using websockets. The project revolves around hosting trivia games that can be played by users in a vicinity of the LED screen located in the Student Hall for Exploration and Development ("SHED").</p>
+                                <p>Trivia showdown is an innovative and engaging project that brings excitement of live, real-time trivia to users through a web application using websockets. The project revolves around hosting trivia games that can be played by users in a vicinity of the LED screen located in the Student Hall for Exploration and Development (&quot;SHED&quot;).</p>
                             </div>
                             <p>This concept centers on community interaction and engagement.</p>
                             <div className="my-4">

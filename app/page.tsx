@@ -8,73 +8,79 @@ import Image from 'next/image';
 
 
 export default function Main() {
+
+    const [scrolled, setScrolled] = React.useState(false)
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
-        <div className="w-screen sm:max-w-6xl mx-auto">
-            <Navbar />
-            <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }} >
-                <p>
-                    Hi, my name is Devin Vasavong. I&#39;m a second year software engineering student at{' '}
-                    <Link aria-label="link to rit website" href="https://rit.edu" target="_blank" className="text-[#F76902] font-semibold hover:underline">Rochester Institute of Technology.</Link>
-                    {/* <br/>
-                    <br/>
-                    I have a strong passion for creating side projects and love to work in a collaborative team. I am currently working on a
-                    Teleprompting and HRMS service. Both of which are created using Next.js!
-                    <br/>
-                    <br/>
-                    As of October 11, 2023, I am looking for a summer/fall 2024 co-op in full-stack development. If I seem to fit into this criteria, please contact me using the email listed above.
-                    <br/>
-                    <br/>
-                    If there are any questions regarding my skills, projects, or anything else, please contact me using the email listed above as well. */}
-                </p>
-            </motion.div>
-            {/* <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
-                <h1 className="font-bold pb-3 text-lg">Experience</h1>
-                <div className="space-y-3">
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <p className="font-medium">Customer Service Representative</p>
-                            <p className="text-sm text-gray-400">Wegmans Food Markets</p>
-                        </div>
-                        <p className="text-gray-400 text-sm">March 2021 - Present</p>
+        <div className="w-screen scroll-smooth">
+            <div>
+                <nav className={`transition-all duration-300 py-5 sm:py-10 sticky top-0 z-50 bg-white ${scrolled ? "border-b sm:py-3" : "sm:py-10"}`}>
+                    <div className="px-5 mx-auto max-w-5xl items-center justify-between flex">
+                        <p className="text-sm font-medium">Devin Vasavong</p>
+                        <ol className="gap-2 flex">
+                            <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
+                                <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</Link>
+                            </li>
+                            <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
+                                {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}
+                                {/* send to work id */}
+                                <Link href="#work">My work</Link>
+                            </li>
+                        </ol>
                     </div>
-                    <div>
-                        <ul className="list-disc list-inside text-sm">
-                            <li>Provided 100% customer satisfaction</li>
-                            <li>Resolve customer concerns, comments, and suggestions</li>
-                            <li>Making phone calls to departments to confirm inventory and item details</li>
-                            <li>Creating and updating customer profiles on Customer Loyalty Management (CLM) software</li>
-                        </ul>
+                </nav>
+                <section className="mx-auto max-w-5xl px-5 my-10 flex flex-row gap-2 items-center justify-center">
+                    <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                        <Image className="rounded-full" src="https://cdn.vasavong.dev/images/Devin_Portrait-084.jpg" width={100} height={100} alt="Collaborator" />
                     </div>
-                </div>
-            </motion.div> */}
-            <motion.div className="py-10 px-10" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 2 }} >
-                <h1 className="font-bold pb-3 text-lg">Projects</h1>
-                <div className="space-y-3">
-                    <div className="sm:flex items-center gap-4">
-                        <div className="sm:w-1/12 sm:mb-0 mb-2">
-                            <Image src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1920} height={1080} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm" />
-                        </div>
-                        <div className="flex justify-between items-center w-full sm:w-11/12">
-                            <div className="flex flex-col">
-                                <p className="font-medium">Workplace Scheduling (Shift List)</p>
-                                <p className="text-sm text-gray-400">Personal Project + Collaborator</p>
+                    <h1 className="font-medium text-3xl text-center">Aspiring Full-Stack Developer</h1>
+                </section>
+                <section className="mx-auto max-w-5xl px-5 my-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="text-sm">
+                        <p className="font-medium text-blue-500">About me</p>
+                        <p>I&apos;m a student at Rochester Institute of Technology pursuing a degree in Software Engineering. I&apos;m from Rochester, NY.</p>
+                    </div>
+                    <div className="text-sm">
+                        <p className="font-medium text-emerald-500">Contact me</p>
+                        <p>You can reach me at <a className="underline text-blue-500" href="mailto:devin@vasavong.com?subject=Hello">devin@vasavong.com</a>.</p>
+                    </div>
+                </section>
+                <section className="my-10 bg-gray-50" id="work">
+                    <div className="mx-auto max-w-5xl px-5 py-10">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <div className="flex-1">
+                                <p className="font-medium text-fuchsia-400 text-sm">Personal project</p>
+                                <div className="my-2">
+                                    <Image className="rounded-sm" src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1280} height={720} alt="Screenshot of scheduling page. Text says scheduling made easier." />
+                                </div>
+                                <Link href="/work/workplace-scheduling" className="underline decoration-slate-400 font-medium">
+                                    ShiftList
+                                </Link>
                             </div>
-                            <Link href="/work/workplace-scheduling" aria-label="link to workplace scheduling project page">
-                                <p className="text-center text-sm cursor-pointer bg-gray-200 text-black hover:bg-black hover:text-gray-200 px-2.5 py-0.5 rounded-lg transition-all duration-300">View Project</p>
-                            </Link>
+                            <div className="flex-1">
+                                <p className="font-medium text-fuchsia-400 text-sm">Personal project</p>
+                                <div className="my-2">
+                                    <Image className="rounded-sm" src="https://cdn.vasavong.dev/images/trivia_showdown.jpg" width={1280} height={720} alt="Screenshot of scheduling page. Text says scheduling made easier." />
+                                </div>
+                                <Link href="/work/trivia-showdown" className="underline decoration-slate-400 font-medium">
+                                    SHED Trivia Showdown
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                    <div className="flex justify-between items-start">
-                        <div>
-                            <p className="font-medium">Teleprompting Service</p>
-                            <p className="text-sm text-gray-400 text-center">Personal Project + Collaborators</p>
-                        </div>
-                        <Link href="/" aria-label="link to workplace scheduling project page">
-                            <p className="text-red-500 text-sm cursor-not-allowed text-center">Work in progress</p>
-                        </Link>
-                    </div>
-                </div>
-            </motion.div>
+                </section>
+            </div>
         </div>
     )
 }

@@ -1,17 +1,50 @@
 "use client";
+import * as React from 'react';
 
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { motion } from "framer-motion"
 import Image from "next/image";
-
-import main_image from '@/app/images/enter-phone-number.png';
-import main_page from '@/app/images/main_page.png'
+import Link from "next/link";
+import { useRouter } from 'next/navigation'
 
 export default function Page() {
+    const router = useRouter();
+
+    const [scrolled, setScrolled] = React.useState(false)
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <div>
-            <div className="sm:max-w-5xl w-11/12 mx-auto py-10">
+            <nav className={`transition-all duration-300 sticky top-0 z-50 bg-white ${scrolled ? "border-b py-3" : "py-5"}`}>
+                <div className="mx-auto w-11/12 sm:max-w-5xl items-center justify-between flex">
+                    <p className="text-sm font-medium">Devin Vasavong</p>
+                    <ol className="gap-2">
+                        <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
+                            <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</Link>
+                        </li>
+                        <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
+                            {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}
+                            {/* send to work id */}
+                            <Link href="#work">My work</Link>
+                        </li>
+                    </ol>
+                </div>
+            </nav>
+            <div className="sm:max-w-5xl w-11/12 mx-auto pb-10">
                 <div className="pb-3 border-b flex flex-col space-y-1">
+                    <div>
+                        <button onClick={() => router.back()} className="text-sm text-blue-500 hover:underline">Go Back</button>
+                    </div>
                     <h1 className="font-semibold text-3xl">Workplace Scheduling (Shift List)</h1>
                     <div>
                         <p className="text-yellow-800 bg-yellow-100 rounded-full inline-block px-2 py-0.5 text-sm">In-progress</p>
@@ -21,10 +54,9 @@ export default function Page() {
                     <p className="text-gray-400 font-medium text-sm">Contributors</p>
                     <div className="flex flex-row space-x-1">
                         <div className="group/div">
-                            <Avatar>
-                                <AvatarImage width={32} height={32} src="https://media.licdn.com/dms/image/D5603AQHyZFlBQNUheQ/profile-displayphoto-shrink_100_100/0/1695432106813?e=1704326400&v=beta&t=ONvKP4pzMEPiGxBRjj4uuje0WuK1yTNJRNVs72xG6Fs" alt="Collaborator"/>
-                                <AvatarFallback>DV</AvatarFallback>
-                            </Avatar>
+                            <div className="relative w-10 h-10 rounded-full overflow-hidden">
+                                <Image className="rounded-full" src="https://cdn.vasavong.dev/images/Devin_Portrait-084.jpg" width={100} height={100} alt="Collaborator" />
+                            </div>
                             <div className="invisible group-hover/div:visible group-hover/div:opacity-100 opacity-0 mt-1 border px-2 py-0.5 absolute text-xs text-black rounded-full transition-all duration-300">
                                 Devin Vasavong
                             </div>

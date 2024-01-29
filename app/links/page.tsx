@@ -32,7 +32,7 @@ export default function Links() {
                     <Card title="LinkedIn" link="https://linkedin.com/in/devinvasavong" caption="Connect with me" />
                     <Card title="Github" link="https://github.com/devinvasavong" />
                     <Card title="Email" link="mailto:devin@vasavong.com" />
-                    <Card title="Apply for a QuickSilver Card" link="https://i.capitalone.com/JCDXVGjJ4" />
+                    {/* <Card title="Apply for a QuickSilver Card" link="https://i.capitalone.com/JCDXVGjJ4" /> */}
                 </div>
             </div>
         </div>

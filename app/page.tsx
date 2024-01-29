@@ -40,6 +40,19 @@ export default function Main() {
                         <p className="font-medium text-emerald-500">Contact me</p>
                         <p>You can reach me at <a className="underline text-blue-500" href="mailto:devin@vasavong.com?subject=Hello">devin@vasavong.com</a>.</p>
                     </div>
+                    <div className="text-sm">
+                       <p className="font-medium text-fuchsia-500">Skills</p> 
+                       <ol className="list-none text-xs flex flex-wrap gap-2">
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">Javascript</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">Typescript</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">MongoDB</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">Firebase</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">Next.js</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">TailwindCSS</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">CSS</li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">HTML</li>
+                       </ol>
+                    </div>
                 </section>
                 <section className="my-10 bg-gray-50" id="work">
                     <div className="mx-auto max-w-5xl px-5 py-10">

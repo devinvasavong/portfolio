@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from 'next/navigation'
+import Navbar from '@/app/components/navbar';
 
 export default function Page() {
     const router = useRouter();
@@ -25,21 +26,7 @@ export default function Page() {
 
     return (
         <div>
-            <nav className={`transition-all duration-300 sticky top-0 z-50 bg-white ${scrolled ? "border-b py-3" : "py-5"}`}>
-                <div className="mx-auto w-11/12 sm:max-w-5xl items-center justify-between flex">
-                    <p className="text-sm font-medium">Devin Vasavong</p>
-                    <ol className="gap-2 flex">
-                        <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
-                            <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</Link>
-                        </li>
-                        <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
-                            {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}
-                            {/* send to work id */}
-                            <Link href="#work">My work</Link>
-                        </li>
-                    </ol>
-                </div>
-            </nav>
+            <Navbar scrolled={scrolled} />
             <div className="sm:max-w-5xl w-11/12 mx-auto pb-10">
                 <div className="pb-3 border-b flex flex-col space-y-1">
                     <div>

@@ -1,6 +1,7 @@
-import Image from "next/image"
-import Navbar from "../components/navbar"
-import Link from "next/link"
+"use client";
+import Link from 'next/link';
+import * as React from 'react';
+import Navbar from '../components/navbar';
 
 function Card({
     title,
@@ -22,9 +23,22 @@ function Card({
 }
 
 export default function Links() {
+    const [scrolled, setScrolled] = React.useState(false)
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 0)
+        }
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
         <div className="mx-auto max-w-5xl px-10">
-            <Navbar />
+            <Navbar scrolled={scrolled} />
             <div className="py-10">
                 <div className="grid-cols-1 flex flex-col gap-2 transition-all duration-300">
                     <Card title="Main Page" link="https://vasavong.dev/" />

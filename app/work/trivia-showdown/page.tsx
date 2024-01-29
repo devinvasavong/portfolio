@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import * as React from 'react';
 import Link from 'next/link';
+import Navbar from '@/app/components/navbar';
 
 export default function Page() {
     const router = useRouter();
@@ -24,34 +25,21 @@ export default function Page() {
 
     return (
         <div>
-            <nav className={`transition-all duration-300 sticky top-0 z-50 bg-white ${scrolled ? "border-b py-3" : "py-5"}`}>
-                <div className="mx-auto w-11/12 sm:max-w-5xl items-center justify-between flex">
-                    <p className="text-sm font-medium">Devin Vasavong</p>
-                    <ol className="gap-2 sm:flex hidden">
-                        <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
-                            <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</Link>
-                        </li>
-                        <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
-                            {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}
-                            {/* send to work id */}
-                            <Link href="#work">My work</Link>
-                        </li>
-                    </ol>
-                </div>
-            </nav>
+            <Navbar scrolled={scrolled} />
             <div className="sm:max-w-5xl w-11/12 mx-auto pb-10">
                 <div className="pb-3 border-b flex flex-col space-y-1">
                     <div>
                         <button onClick={() => router.back()} className="text-sm text-blue-500 hover:underline">Go Back</button>
                     </div>
                     <h1 className="font-semibold text-3xl">SHED Trivia Showdown</h1>
-                    <div>
+                    <div className="flex items-center gap-3">
                         <p className="text-yellow-800 bg-yellow-100 rounded-full inline-block px-2 py-0.5 text-sm">In-progress</p>
+                        <p className="text-xs">Last revised: <span className="text-gray-400">January 29, 2024</span></p>
                     </div>
                 </div>
                 <motion.div className="flex flex-col space-y-1 mt-3" initial={{ y: 2, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }}>
-                    <Link href="https://github.com/devinvasavong/survey-nextjs" aria-label="Link to github (survey nextjs)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey Next.js)</Link>
-                    <Link href="https://github.com/devinvasavong/survey" aria-label="Link to github (survey html)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey HTML)</Link>
+                    <Link prefetch={false} href="https://github.com/devinvasavong/survey-nextjs" aria-label="Link to github (survey nextjs)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey Next.js)</Link>
+                    <Link prefetch={false} href="https://github.com/devinvasavong/survey" aria-label="Link to github (survey html)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey HTML)</Link>
                     <p className="text-gray-400 font-medium text-sm">Contributor</p>
                     <div className="flex flex-row space-x-1">
                         <div className="group/div">
@@ -72,7 +60,7 @@ export default function Page() {
                             </div>
                             <div className="flex flex-col sm:flex-row items-start gap-4">
                                 <div className="h-32 mb-4">
-                                    <Link href="https://cdn.vasavong.dev/images/IMG_8260.gif" aria-label="View the gif" className="absolute text-sm text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-md">
+                                    <Link prefetch={false} href="https://cdn.vasavong.dev/images/IMG_8260.gif" aria-label="View the gif" className="absolute text-sm text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-md">
                                         Open gif
                                     </Link>
                                     <Image
@@ -80,7 +68,7 @@ export default function Page() {
                                         width={960}
                                         height={540}
                                         alt="Image of the shift dashboard with text that says 'scheduling made easier'"
-                                        className="rounded-md border shadow-sm w-full h-full object-cover"
+                                        className="rounded-md border shadow-sm w-full h-full object-cover flex-shrink-0"
                                     />
                                 </div>
                                 <p>Trivia showdown is an innovative and engaging project that brings excitement of live, real-time trivia to users through a web application using websockets. The project revolves around hosting trivia games that can be played by users in a vicinity of the LED screen located in the Student Hall for Exploration and Development (&quot;SHED&quot;).</p>
@@ -111,6 +99,11 @@ export default function Page() {
                                 <div className="sm:w/12 sm:order-0 order-1 flex flex-col">
                                     <h3 className="font-medium">First Iteration</h3>
                                     <p className="text-sm">The first iteration of this project was a simple web application that allowed users to join a trivia game and answer questions. However, the questions were displayed on the client side coded fully in HTML, CSS, and Vanilla JS.</p>
+                                    <p className="text-sm mt-3">This iteration allowed for me to grasp the concept and see it was achievable.</p>
+                                    <code className="text-sm text-pink-600 bg-gray-100 p-2 rounded-sm mt-3" dangerouslySetInnerHTML={{__html: `app.get("/", (req, res) => {
+                                                                                                    res.sendFile(__dirname + "/files/index.html")
+                                                                                                    })`}} />
+                                    <p className="text-sm mt-3">By having a file that served as a Server, running the express server, <code className="text-pink-600 bg-gray-100 rounded-sm">index.js</code>, I was able to send an HTML file to represent the interaction screen.</p>
                                 </div>
                             </div>
                         </div>

@@ -3,34 +3,26 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import * as React from 'react'
 
-export default function Navbar() {
-
-    const [open, setOpen] = React.useState(false)
-
+export default function Navbar({ scrolled }: { scrolled: boolean}) {
     return (
-        <nav className="w-full px-6">
-            <motion.div transition={{ duration: 1}} initial={{ opacity: 0}} animate={{ opacity: 100 }} className="top-0 z-100 w-auto h-auto flex flex-row justify-start gap-10 bg-white/50 sm:bg-transparent border-black/5 border-b sm:border-none backdrop-blur-lg sm:backdrop-blur-none overflow-y-hidden items-center mt-4">
-                <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf" target="_blank" aria-label="link to my resume">
-                    <div>
-                        <div className="group flex flex-col hover:bg-black hover:text-white duration-300 transition-all rounded-lg px-4 py-2">
-                            <h1 className="text-xs sm:text-sm">Resume</h1>
-                            <p className="text-xs sm:text-sm text-gray-500 group-hover:text-gray-400">Click to view</p>
-                        </div>
-                    </div>
+        <nav className={`transition-all duration-300 sticky top-0 z-50 bg-white ${scrolled ? "border-b py-3" : "py-5"}`}>
+            <div className="mx-auto w-11/12 sm:max-w-5xl items-center justify-between flex">
+                <Link prefetch={false} href="/">
+                    <p className="text-sm font-medium hover:underline underline-offset-4 decoration-gray-200">Devin Vasavong</p>
                 </Link>
-                <div className="flex flex-col">
-                    <h1 className="text-xs sm:text-sm">Devin Vasavong</h1>
-                    <p className="text-xs sm:text-sm text-gray-500">Student</p>
-                </div>
-                <div className="flex flex-col">
-                    <h1 className="text-xs sm:text-sm">Rochester</h1>
-                    <p className="text-xs sm:text-sm text-gray-500">New York</p>
-                </div>
-                <div className="flex flex-col">
-                    <h1 className="text-xs sm:text-sm">devin@vasavong.com</h1>
-                    <p className="text-xs sm:text-sm text-gray-500">585-831-3592</p>
-                </div>
-            </motion.div>
+                <ol className="gap-2 flex">
+                    <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
+                        <Link className="hidden sm:block" prefetch={false} href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</Link>
+                        <Link className="sm:hidden block" prefetch={false} href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">CV</Link>
+                    </li>
+                    <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
+                        {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}
+                        {/* send to work id */}
+                        <Link className="hidden sm:block" prefetch={false} href="#work">My work</Link>
+                        <Link className="sm:hidden block" prefetch={false} href="#work">Work</Link>
+                    </li>
+                </ol>
+            </div>
         </nav>
     )
 }

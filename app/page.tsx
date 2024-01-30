@@ -53,6 +53,13 @@ export default function Main() {
                             <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300">HTML</li>
                        </ol>
                     </div>
+                    <div className="text-sm">
+                       <p className="font-medium text-orange-500">Links</p> 
+                       <ol className="list-none text-xs flex flex-wrap gap-2">
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300"><Link prefetch={false} href="https://linkedin.com/in/devinvasavong" className="w-full h-full">LinkedIn</Link></li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300"><Link prefetch={false} href="https://github.com/devinvasavong" className="w-full h-full">Github</Link></li>
+                       </ol>
+                    </div>
                 </section>
                 <section className="my-10 bg-gray-50" id="work">
                     <div className="mx-auto max-w-5xl px-5 py-10">

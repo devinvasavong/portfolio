@@ -56,8 +56,8 @@ export default function Main() {
                     <div className="text-sm">
                        <p className="font-medium text-orange-500">Links</p> 
                        <ol className="list-none text-xs flex flex-wrap gap-2">
-                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300"><Link prefetch={false} href="https://linkedin.com/in/devinvasavong" className="w-full h-full">LinkedIn</Link></li>
-                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300"><Link prefetch={false} href="https://github.com/devinvasavong" className="w-full h-full">Github</Link></li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300"><a href="https://linkedin.com/in/devinvasavong" className="w-full h-full">LinkedIn</a></li>
+                            <li className="px-2 py-1.5 bg-gray-100 rounded-full hover:bg-gray-200 transition-colors duration-300"><a href="https://github.com/devinvasavong" className="w-full h-full">Github</a></li>
                        </ol>
                     </div>
                 </section>
@@ -66,25 +66,25 @@ export default function Main() {
                         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
                             <div className="flex-1">
                                 <p className="font-medium text-fuchsia-400 text-sm">Personal project</p>
-                                <Link href="/work/workplace-scheduling" className="group">
+                                <a href="/work/workplace-scheduling" className="group">
                                     <div className="my-2">
                                         <Image className="rounded-sm" src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1280} height={720} alt="Screenshot of scheduling page. Text says scheduling made easier." />
                                     </div>
                                     <p className="group-hover:underline decoration-slate-400 underline-offset-4 font-medium">
                                         ShiftList
                                     </p>
-                                </Link>
+                                </a>
                             </div>
                             <div className="flex-1">
                                 <p className="font-medium text-fuchsia-400 text-sm">Personal project</p>
-                                <Link href="/work/trivia-showdown" className="group">
+                                <a href="/work/trivia-showdown" className="group">
                                     <div className="my-2">
                                         <Image className="rounded-sm" src="https://cdn.vasavong.dev/images/trivia_showdown.jpg" width={1280} height={720} alt="Screenshot of scheduling page. Text says scheduling made easier." />
                                     </div>
                                     <p className="group-hover:underline decoration-slate-400 underline-offset-4 font-medium">
                                         SHED Trivia Showdown
                                     </p>
-                                </Link>
+                                </a>
                             </div>
                         </div>
                     </div>

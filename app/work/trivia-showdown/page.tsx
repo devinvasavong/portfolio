@@ -38,8 +38,8 @@ export default function Page() {
                     </div>
                 </div>
                 <motion.div className="flex flex-col space-y-1 mt-3" initial={{ y: 2, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }}>
-                    <Link prefetch={false} href="https://github.com/devinvasavong/survey-nextjs" aria-label="Link to github (survey nextjs)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey Next.js)</Link>
-                    <Link prefetch={false} href="https://github.com/devinvasavong/survey" aria-label="Link to github (survey html)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey HTML)</Link>
+                    <a href="https://github.com/devinvasavong/survey-nextjs" aria-label="Link to github (survey nextjs)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey Next.js)</a>
+                    <a href="https://github.com/devinvasavong/survey" aria-label="Link to github (survey html)" className="text-sm text-blue-500 hover:underline">Github Repo (Survey HTML)</a>
                     <p className="text-gray-400 font-medium text-sm">Contributor</p>
                     <div className="flex flex-row space-x-1">
                         <div className="group/div">
@@ -60,9 +60,9 @@ export default function Page() {
                             </div>
                             <div className="flex flex-col sm:flex-row items-start gap-4">
                                 <div className="h-32 mb-4">
-                                    <Link prefetch={false} href="https://cdn.vasavong.dev/images/IMG_8260.gif" aria-label="View the gif" className="absolute text-sm text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-md">
+                                    <a href="https://cdn.vasavong.dev/images/IMG_8260.gif" aria-label="View the gif" className="absolute text-sm text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-md">
                                         Open gif
-                                    </Link>
+                                    </a>
                                     <Image
                                         src="https://cdn.vasavong.dev/images/IMG_8260.gif"
                                         width={960}

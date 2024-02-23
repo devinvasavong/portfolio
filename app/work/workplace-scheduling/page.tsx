@@ -48,15 +48,6 @@ export default function Page() {
                                 Devin Vasavong
                             </div>
                         </div>
-                        <div className="group/div">
-                            <Avatar>
-                                <AvatarImage width={32} height={32} src="https://media.licdn.com/dms/image/D4D03AQEdRrV7BDJZnw/profile-displayphoto-shrink_100_100/0/1692653800547?e=1704326400&v=beta&t=nc943vp7qqTh4V1uCAMMqGRFQWwUXJ1lznDM7Flx8ms" alt="Collaborator"/>
-                                <AvatarFallback>AR</AvatarFallback>
-                            </Avatar>
-                            <div className="invisible group-hover/div:visible group-hover/div:opacity-100 opacity-0 mt-1 border px-2 py-0.5 absolute text-xs text-black rounded-full transition-all duration-300">
-                                Aidan Ryther
-                            </div>
-                        </div>
                     </div>
                 </motion.div>
                 <motion.div className="py-10 flex-col flex space-y-4" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >

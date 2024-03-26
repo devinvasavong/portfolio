@@ -50,6 +50,26 @@ export default function Page() {
                         </div>
                     </div>
                 </motion.div>
+                <motion.div className="mt-10 flex-col flex space-y-4" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
+                    My current tech stack for Shiftlist is Next.js, Typescript, TailwindCSS, Firebase Authentication, MongoDB, Auth0 by Okta, and Stripe. I plan on using SQL for the database in the future.
+                    <div className="mt-4">
+                        Defined words:
+                        <ol className="list-decimal list-inside pl-4 gap-4 flex flex-col">
+                            <li>
+                                <h3 className="font-medium">Workplace</h3>
+                                <p>A workplace is created for businesses that holds administrators, employees, shifts, and jobs (if applicable to your subscription).</p>
+                            </li>
+                            <li>
+                                <h3 className="font-medium">Administrator</h3>
+                                <p>An administrator is a user that has the ability to create and modify workplaces.</p>
+                            </li>
+                            <li>
+                                <h3 className="font-medium">Employee</h3>
+                                <p>An employee is a user that can be assigned to shifts by a manager.</p>
+                            </li>
+                        </ol>
+                    </div>
+                </motion.div>
                 <motion.div className="py-10 flex-col flex space-y-4" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
                     <div className="flex flex-col md:flex-row items-start gap-4">
                         <p className="w-full order-1 md:order-0 md:1/3">
@@ -61,6 +81,15 @@ export default function Page() {
                         <div className="w-full order-0 md:order-1 md:2/3">
                             <Image src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1920} height={1080} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm" />
                         </div>
+                    </div>
+                    <div className="flex flex-col items-start gap-4">
+                        <p className="w-full">
+                            Shiftlist intends to have two types of users: employers and employees. Administrators are able to create and modify workplaces. Employees are able to view their shifts, request time off, and additional features. Shiftlist has two types of logins: administrator and employees. Administrators log in using their email and password, authentication with Auth0 by Okta. Employees log in using their employee ID and pin.
+                        </p>
+                        <p className="w-full">
+                            {/* simple, advanced, and enterprise */}
+                            Shiftlist runs on a subscription-based model. There are three types of subscriptions: simple, advanced, and enterprise. The simple offers up to 3 employees, basic support, and unlimited scheduling. The advanced offers up to 10 employees, priority support, and unlimited scheduling. The enterprise offers unlimited employees, priority support, unlimited scheduling, and unlimited jobs.
+                        </p>
                     </div>
                     <section className="flex flex-col space-y-1 bg-black rounded-md p-4 text-white">
                         <h2 className="font-semibold">Interested in Shiftlist?</h2>

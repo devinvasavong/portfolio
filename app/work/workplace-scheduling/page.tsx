@@ -28,13 +28,18 @@ export default function Page() {
         <div>
             <Navbar scrolled={scrolled} />
             <div className="sm:max-w-5xl w-11/12 mx-auto pb-10">
-                <div className="pb-3 border-b flex flex-col space-y-1">
+                <div className="pb-3 border-b flex flex-col space-y-1 w-full">
                     <div>
                         <button onClick={() => router.back()} className="text-sm text-blue-500 hover:underline">Go Back</button>
                     </div>
                     <h1 className="font-semibold text-3xl">Workplace Scheduling (Shift List)</h1>
-                    <div>
+                    <div className="w-full flex items-center justify-between">
                         <p className="text-yellow-800 bg-yellow-100 rounded-full inline-block px-2 py-0.5 text-sm">In-progress</p>
+                        <Link href="https://shiftlist.org" className="flex">
+                        <div className="button-class">
+                            Go to Shiftlist
+                        </div>
+                    </Link>
                     </div>
                 </div>
                 <motion.div className="flex flex-col space-y-1 mt-3" initial={{ y: 2, opacity: 0 }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1 }}>
@@ -51,10 +56,10 @@ export default function Page() {
                     </div>
                 </motion.div>
                 <motion.div className="mt-10 flex-col flex space-y-4" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
-                    My current tech stack for Shiftlist is Next.js, Typescript, TailwindCSS, Firebase Authentication, MongoDB, Auth0 by Okta, and Stripe. I plan on using SQL for the database in the future.
+                    My current tech stack for Shiftlist is Next.js, Typescript, TailwindCSS, MongoDB, Auth0 by Okta, and Stripe. I plan on using SQL for the database in the future.
                     <div className="mt-4">
                         Defined words:
-                        <ol className="list-decimal list-inside pl-4 gap-4 flex flex-col">
+                        <ol className="list-decimal list-inside pl-4 gap-2 flex flex-col">
                             <li>
                                 <h3 className="font-medium">Workplace</h3>
                                 <p>A workplace is created for businesses that holds administrators, employees, shifts, and jobs (if applicable to your subscription).</p>
@@ -71,16 +76,14 @@ export default function Page() {
                     </div>
                 </motion.div>
                 <motion.div className="py-10 flex-col flex space-y-4" initial={{ y: 5, opacity: 0, }} animate={{ y: 0, opacity: 100 }} transition={{ duration: 1.5 }} >
-                    <div className="flex flex-col md:flex-row items-start gap-4">
-                        <p className="w-full order-1 md:order-0 md:1/3">
+                    <div className="flex flex-col md:flex-row items-center sm:items-start gap-4">
+                        <p className="w-full order-1 md:order-0 float-right">
                             I wanted to create something that would benefit small businesses and their employees. I decided to create a scheduling system that is affordable and effective.
                             <br/>
                             <br/>
                             Workplace scheduling software is usually expensive and hard to use. Shiftlist elimates both of those problems by providing a simple and easy to use interface.
                         </p>
-                        <div className="w-full order-0 md:order-1 md:2/3">
-                            <Image src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={1920} height={1080} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm" />
-                        </div>
+                        <Image src="https://cdn.vasavong.dev/images/scheduling_made_easier.png" width={400} height={400} alt="Image of the shift dashboard with text that says 'scheduling made easier'" className="rounded-md border shadow-sm float-left" />
                     </div>
                     <div className="flex flex-col items-start gap-4">
                         <p className="w-full">
@@ -91,8 +94,8 @@ export default function Page() {
                             Shiftlist runs on a subscription-based model. There are three types of subscriptions: simple, advanced, and enterprise. The simple offers up to 3 employees, basic support, and unlimited scheduling. The advanced offers up to 10 employees, priority support, and unlimited scheduling. The enterprise offers unlimited employees, priority support, unlimited scheduling, and unlimited jobs.
                         </p>
                     </div>
-                    <section className="flex flex-col space-y-1 bg-black rounded-md p-4 text-white">
-                        <h2 className="font-semibold">Interested in Shiftlist?</h2>
+                    <section className="flex flex-col space-y-1 bg-black rounded-md px-6 py-4 text-white text-center">
+                        <h2 className="font-semibold text-lg">Interested in Shiftlist?</h2>
                         <p className="text-sm">Shiftlist is currently in development. If you are interested in using Shiftlist, please contact me at <a href="mailto:devin@vasavong?subject=Re: Shiftlist" className="text-blue-500 hover:underline">here</a>.</p>
                     </section>
                 </motion.div>

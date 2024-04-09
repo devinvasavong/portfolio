@@ -70,6 +70,9 @@
   * {
     @apply border-border;
   }
+  .button-class {
+    @apply bg-black text-white px-4 py-1.5 rounded-full font-medium text-sm text-center hover:bg-black/80 hover:text-white duration-300 transition-colors
+  }
   body {
     @apply bg-background text-foreground;
   }

@@ -12,8 +12,8 @@ export default function Navbar({ scrolled }: { scrolled: boolean}) {
                 </a>
                 <ol className="gap-2 flex">
                     <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
-                        <a className="hidden sm:block" href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">Resume</a>
-                        <a className="sm:hidden block" href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">CV</a>
+                        <a className="hidden sm:block" href="https://cdn.vasavong.dev/files/Chanthanong_Devin_Vasavong_Resume.pdf">Resume</a>
+                        <a className="sm:hidden block" href="https://cdn.vasavong.dev/files/Chanthanong_Devin_Vasavong_Resume.pdf">CV</a>
                     </li>
                     <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
                         {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}

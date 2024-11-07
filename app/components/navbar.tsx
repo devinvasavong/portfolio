@@ -18,8 +18,8 @@ export default function Navbar({ scrolled }: { scrolled: boolean}) {
                     <li className="font-medium px-2 py-1.5 hover:bg-gray-100 rounded-sm text-sm">
                         {/* <Link href="https://cdn.vasavong.dev/files/Chanthanong_Vasavong_Resume.pdf">My work</Link> */}
                         {/* send to work id */}
-                        <a className="hidden sm:block" href="#work">My work</a>
-                        <a className="sm:hidden block" href="#work">Work</a>
+                        <a className="hidden sm:block" href="/work">My work</a>
+                        <a className="sm:hidden block" href="/work">Work</a>
                     </li>
                 </ol>
             </div>

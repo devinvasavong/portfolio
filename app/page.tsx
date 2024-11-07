@@ -28,7 +28,7 @@ export default function Main() {
                     </h1>
                     <p className="mt-5 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
                         I&apos;m a <span className="font-semibold">software engineering student</span> born and raised in Rochester, NY. I&apos;m currently studying at the 
-                        <Link className="font-semibold text-[#F76902] hover:underline" href="https://www.rit.edu"> Rochester Institute of Technology</Link>, where I&apos;m pursuing a Bachelor's degree in Software Engineering. I&apos;m passionate about building software that makes a difference in people&apos;s lives.
+                        <Link className="font-semibold text-[#F76902] hover:underline" href="https://www.rit.edu"> Rochester Institute of Technology</Link>, where I&apos;m pursuing a Bachelor&apos;s degree in Software Engineering. I&apos;m passionate about building software that makes a difference in people&apos;s lives.
                     </p>
                 </header>
 
@@ -36,7 +36,7 @@ export default function Main() {
                 <section className="mt-16">
                     <h2 className="text-3xl font-bold text-gray-800">Skills</h2>
                     <p className="mt-5 text-lg text-gray-700 mb-8">
-                        I&apos;m primarily interested in full-stack development, but I also have experience with mobile app development and game development. Here are some of the technologies I've worked with:
+                        I&apos;m primarily interested in full-stack development, but I also have experience with mobile app development and game development. Here are some of the technologies I&apos;ve worked with:
                     </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                         {/* Programming Languages */}

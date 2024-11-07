@@ -45,7 +45,7 @@ export default function WorkPage() {
                         My Work
                     </h1>
                     <p className="mt-5 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                        Here are some of the projects that I've worked on.
+                        Here are some of the projects that I&apos;ve worked on.
                     </p>
                 </header>
 

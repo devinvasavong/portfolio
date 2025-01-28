@@ -92,9 +92,9 @@ export default function Page() {
 
                     <h2 className="text-lg font-semibold">Challenges</h2>
                     <p className="text-gray-700">The biggest challenge was working with a team of 5 students. We had to coordinate our schedules to meet and work on the project. Additionally, we had to ensure that our code was consistent and that we followed the project requirements.
-                    I would say that this project was my first experience working on a real team project. I learned a lot about communication, collaboration, and project management.
-                    Our team used the Agile methodology to manage our project. We had weekly sprints and stand-up meetings to discuss our progress and any blockers we had. We used Trello to manage our tasks and Slack to communicate.
-                    Having to learn and use Angular was also a challenge. I had never used Angular before, so I had to learn it on the fly. I spent a lot of time reading the documentation and watching tutorials to understand how Angular worked.</p>
+                        I would say that this project was my first experience working on a real team project. I learned a lot about communication, collaboration, and project management.
+                        Our team used the Agile methodology to manage our project. We had weekly sprints and stand-up meetings to discuss our progress and any blockers we had. We used Trello to manage our tasks and Slack to communicate.
+                        Having to learn and use Angular was also a challenge. I had never used Angular before, so I had to learn it on the fly. I spent a lot of time reading the documentation and watching tutorials to understand how Angular worked.</p>
 
                     <Image src={NavbarGif} alt="Navbar Gif" />
                     <Image src={ReloadGif} alt="Reload Gif" />

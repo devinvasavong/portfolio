@@ -1,31 +1,105 @@
 "use client";
-import * as React from 'react';
-import Navbar from "../components/navbar";
-import Link from 'next/link';
+import React, { useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
+import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
+import Link from 'next/link';
+import Navbar from '../components/navbar';
 
-const InProgress = () => {
+const StatusBadge = ({ type }: { type: string }) => {
+    const styles: { [key: string]: string } = {
+        in_progress: "bg-yellow-200 text-yellow-700",
+        completed: "bg-green-200 text-green-700",
+        discontinued: "bg-red-200 text-red-700"
+    };
+
+    const labels: { [key: string]: string } = {
+        in_progress: "In Progress",
+        completed: "Completed",
+        discontinued: "Discontinued"
+    };
+
     return (
-        <Badge className="bg-yellow-200 text-yellow-700 mb-2 mr-2">In progress</Badge>
-    )
-}
+        <Badge className={`${styles[type]} mb-2 mr-2`}>
+            {labels[type]}
+        </Badge>
+    );
+};
 
-const Completed = () => {
-    return (
-        <Badge className="bg-green-200 text-green-700 mb-2 mr-2">Completed</Badge>
-    )
-}
+const projects = [
+    {
+        id: 1,
+        title: "ShiftList - Workplace Management",
+        description: "A comprehensive workplace management solution for small businesses. Features include real-time scheduling, shift swapping, and time-off management.",
+        status: ["in_progress"],
+        tech: ["React", "Next.js", "Tailwind"],
+        link: "/work/workplace-scheduling"
+    },
+    {
+        id: 2,
+        title: "Live Trivia for SHED LED Screen",
+        description: "Interactive trivia game system with real-time display, audience participation, and automated scoring for large LED screens.",
+        status: ["completed", "discontinued"],
+        tech: ["JavaScript", "WebSocket", "CSS"],
+        link: "/work/trivia-showdown"
+    },
+    {
+        id: 3,
+        title: "Paws - Non-Profit Website",
+        description: "Modern website for animal welfare organization featuring adoption systems, donation processing, and volunteer management.",
+        status: ["completed"],
+        tech: ["React", "Node.js", "MongoDB"],
+        link: "/work/paws"
+    }
+];
 
-const Discontinued = () => {
-    return (
-        <Badge className="bg-red-200 text-red-700 mb-2 mr-2">Discontinued</Badge>
-    )
-}
+const ProjectCard = ({ project }: { project: any }) => (
+    <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.3 }}
+        whileHover={{ scale: 1.02 }}
+        className="w-full"
+    >
+        <Card className="p-4 h-full border hover:shadow-md transition-shadow">
+            <div className="flex flex-wrap mb-2">
+                {project.status.map((status: string, index: number) => (
+                    <StatusBadge key={index} type={status} />
+                ))}
+            </div>
 
-export default function WorkPage() {
-    const [scrolled, setScrolled] = React.useState(false);
+            <div className="flex justify-between items-start mb-2">
+                <h3 className="text-xl font-semibold text-gray-900">
+                    {project.title}
+                </h3>
+                {project.link && (
+                    <Link href={project.link}>
+                        <ExternalLink className="w-4 h-4 text-gray-500 hover:text-gray-700" />
+                    </Link>
+                )}
+            </div>
 
-    React.useEffect(() => {
+            <p className="text-sm text-gray-600 mb-4">
+                {project.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2">
+                {project.tech.map((tech: string, index: number) => (
+                    <Badge key={index} variant="outline" className="text-xs">
+                        {tech}
+                    </Badge>
+                ))}
+            </div>
+        </Card>
+    </motion.div>
+);
+
+export default function ModernPortfolio() {
+
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 0);
         };
@@ -34,57 +108,34 @@ export default function WorkPage() {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    })
+    }, []);
 
     return (
-        <div>
+        <div className="container mx-auto px-4">
             <Navbar scrolled={scrolled} />
-            <div className="container mx-auto px-5 sm:max-w-5xl">
-                <header className="mt-20 text-center">
-                    <h1 className="text-5xl font-extrabold text-gray-800">
-                        My Work
-                    </h1>
-                    <p className="mt-5 text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
-                        Here are some of the projects that I&apos;ve worked on.
-                    </p>
-                </header>
+            <motion.header
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                className="text-center mb-12"
+            >
+                <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                    Featured Work
+                </h1>
+                <p className="text-gray-600 max-w-2xl mx-auto">
+                    A collection of projects showcasing full-stack development and design.
+                </p>
+            </motion.header>
 
-                {/* list of projects */}
-                <div className="mt-16">
-                    <h2 className="text-3xl font-bold text-gray-800 mb-8">Projects</h2>
-                    {/* scrolling vertical list */}
-                    <ul className="w-full">
-                        <li className="hover:scale-[100.5%] hover:shadow-sm p-4 border border-transparent hover:border-gray-200 duration-300 transition-transform rounded-sm">
-                            <Link href="/work/workplace-scheduling">
-                                <InProgress />
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">Workplace Management</h3>
-                                <p className="text-gray-700 text-sm">
-                                    ShiftList, a workplace management application that allows employees to view their schedules, request time off, and swap shifts with other employees.
-                                </p>
-                            </Link>
-                        </li>
-                        <li className="hover:scale-[100.5%] hover:shadow-sm p-4 border border-transparent hover:border-gray-200 duration-300 transition-transform rounded-sm">
-                            <Link href="/work/trivia-showdown">
-                                <Completed />
-                                <Discontinued />
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">Live Trivia for SHED LED Screen</h3>
-                                <p className="text-gray-700 text-sm">
-                                    A live trivia game that displays questions and answers on a large LED screen at the SHED.
-                                </p>
-                            </Link>
-                        </li>
-                        <li className="hover:scale-[100.5%] hover:shadow-sm p-4 border border-transparent hover:border-gray-200 duration-300 transition-transform rounded-sm">
-                            <Link href="/work/paws">
-                                <Completed />
-                                <h3 className="text-xl font-semibold text-gray-800 mb-2">Paws</h3>
-                                <p className="text-gray-700 text-sm">
-                                    Paws, a non-profit organization that helps animals in need, needed a website to showcase their animals and allow users to donate.
-                                </p>
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+            <motion.div
+                className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ staggerChildren: 0.1 }}
+            >
+                {projects.map((project) => (
+                    <ProjectCard key={project.id} project={project} />
+                ))}
+            </motion.div>
         </div>
-    )
+    );
 }

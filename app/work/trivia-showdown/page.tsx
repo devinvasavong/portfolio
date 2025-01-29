@@ -5,35 +5,34 @@ import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
 import Navbar from '@/app/components/navbar';
+import { ArrowLeft, Github, Users, Timer, Trophy } from 'lucide-react';
 
-const fadeIn = {
-    initial: { opacity: 0, y: 10 },
-    animate: { opacity: 1, y: 0 }
-};
-
-const ProjectBadge = ({ children }: { children: React.ReactNode }) => (
-    <p className="text-yellow-800 bg-yellow-100 rounded-full px-2 py-0.5 text-sm">
+const Section = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
+    <section className={`py-10 ${className}`}>
         {children}
-    </p>
+    </section>
 );
 
-const ProjectLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-    <a
-        href={href}
-        className="text-sm text-blue-500 hover:underline"
-        target="_blank"
-        rel="noopener noreferrer"
+const SectionTitle = ({ children }: { children: React.ReactNode }) => (
+    <h2 className="font-semibold text-2xl text-center mb-4">
+        {children}
+    </h2>
+);
+
+const Feature = ({ icon: Icon, title, description }: { icon: React.ElementType, title: string, description: string }) => (
+    <motion.div
+        className="flex flex-col items-center p-6 bg-white rounded-lg shadow-sm border"
+        whileHover={{ y: -5 }}
+        transition={{ duration: 0.2 }}
     >
-        {children}
-    </a>
-);
-
-const Feature = ({ title, description }: { title: string, description: string }) => (
-    <li>
-        <h3 className="font-medium">{title}</h3>
-        <p className="text-sm">{description}</p>
-    </li>
+        <div className="p-3 bg-blue-50 rounded-full mb-4">
+            <Icon className="w-6 h-6 text-blue-500" />
+        </div>
+        <h3 className="font-medium text-lg mb-2">{title}</h3>
+        <p className="text-gray-600 text-center text-sm">{description}</p>
+    </motion.div>
 );
 
 export default function TriviaPage() {
@@ -47,140 +46,136 @@ export default function TriviaPage() {
     }, []);
 
     return (
-        <div>
+        <div className="min-h-screen bg-background">
             <Navbar scrolled={scrolled} />
             <div className="sm:max-w-5xl w-11/12 mx-auto pb-10">
-                <motion.div
-                    className="pb-3 border-b flex flex-col space-y-1"
-                    {...fadeIn}
-                    transition={{ duration: 0.5 }}
+                <motion.button
+                    onClick={() => router.back()}
+                    className="flex items-center gap-2 text-gray-600 hover:text-gray-900 mt-8 mb-6"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                 >
-                    <button
-                        onClick={() => router.back()}
-                        className="text-sm text-blue-500 hover:underline w-fit"
+                    <ArrowLeft className="w-4 h-4" />
+                    Back to Projects
+                </motion.button>
+
+                <Section>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6 }}
                     >
-                        Go Back
-                    </button>
-                    <h1 className="font-semibold text-3xl">SHED Trivia Showdown</h1>
-                    <div className="flex items-center gap-3">
-                        <ProjectBadge>In-progress</ProjectBadge>
-                        <p className="text-xs">
-                            Last revised: <span className="text-gray-400">January 29, 2024</span>
+                        <Badge variant="outline" className="mb-4">Open Source Project</Badge>
+                        <h1 className="font-bold text-4xl mb-4">SHED Trivia Showdown</h1>
+                        <p className="text-gray-600 text-lg mb-6">
+                            An innovative real-time trivia game platform for the SHED LED display
                         </p>
+
+                        <div className="flex flex-wrap gap-4 mb-8">
+                            <Link
+                                href="https://github.com/devinvasavong/survey-nextjs"
+                                className="flex items-center gap-2 text-sm bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800"
+                            >
+                                <Github className="w-4 h-4" />
+                                Next.js Version
+                            </Link>
+                            <Link
+                                href="https://github.com/devinvasavong/survey"
+                                className="flex items-center gap-2 text-sm bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800"
+                            >
+                                <Github className="w-4 h-4" />
+                                HTML Version
+                            </Link>
+                        </div>
+                    </motion.div>
+                </Section>
+
+                <Section>
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="relative rounded-xl overflow-hidden mb-12"
+                    >
+                        <Image
+                            src="https://cdn.vasavong.dev/images/IMG_8260.gif"
+                            width={1200}
+                            height={600}
+                            alt="Trivia showdown preview"
+                            className="w-full h-[400px] object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50" />
+                    </motion.div>
+                </Section>
+
+                <Section>
+                    <SectionTitle>Key Features</SectionTitle>
+                    <div className="grid md:grid-cols-3 gap-6 mt-8">
+                        <Feature
+                            icon={Timer}
+                            title="Real-time Interaction"
+                            description="Participate in live trivia games with instant feedback and dynamic question display on the SHED LED screen."
+                        />
+                        <Feature
+                            icon={Users}
+                            title="Community Engagement"
+                            description="Create an interactive experience that brings together the SHED community through friendly competition."
+                        />
+                        <Feature
+                            icon={Trophy}
+                            title="Live Leaderboard"
+                            description="Track rankings and scores in real-time, displayed prominently on the SHED screen for all to see."
+                        />
                     </div>
-                </motion.div>
+                </Section>
 
-                <motion.div
-                    className="flex flex-col space-y-1 mt-3"
-                    {...fadeIn}
-                    transition={{ duration: 0.6, delay: 0.1 }}
-                >
-                    <ProjectLink href="https://github.com/devinvasavong/survey-nextjs">
-                        Github Repo (Survey Next.js)
-                    </ProjectLink>
-                    <ProjectLink href="https://github.com/devinvasavong/survey">
-                        Github Repo (Survey HTML)
-                    </ProjectLink>
-
-                    <p className="text-gray-400 font-medium text-sm">Contributor</p>
-                    <div className="flex flex-row space-x-1">
-                        <div className="group/div relative">
-                            <div className="w-10 h-10 rounded-full overflow-hidden">
+                <Section>
+                    <div className="bg-gray-50 rounded-xl p-8">
+                        <SectionTitle>Development Journey</SectionTitle>
+                        <div className="flex flex-col md:flex-row gap-8 items-start mt-8">
+                            <div className="md:w-1/2">
                                 <Image
-                                    className="rounded-full"
-                                    src="https://cdn.vasavong.dev/images/Devin_Portrait-084.jpg"
-                                    width={100}
-                                    height={100}
-                                    alt="Collaborator"
+                                    src="https://cdn.vasavong.dev/images/first_it.png"
+                                    width={600}
+                                    height={400}
+                                    alt="First iteration preview"
+                                    className="rounded-lg shadow-md w-full"
                                 />
                             </div>
-                            <span className="invisible group-hover/div:visible group-hover/div:opacity-100 opacity-0 mt-1 border px-2 py-0.5 absolute text-xs text-black rounded-full transition-all duration-300">
-                                Devin Vasavong
-                            </span>
-                        </div>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    className="py-10 flex-col flex space-y-4"
-                    {...fadeIn}
-                    transition={{ duration: 0.7, delay: 0.2 }}
-                >
-                    <div className="flex flex-col md:flex-row items-start gap-4">
-                        <div className="w-full order-1 md:order-0">
-                            <div className="text-sm bg-red-100 text-red-500 px-4 py-2.5 rounded-md border-red-200 border mb-4">
-                                This project is an <i>idea</i> and open source.
-                            </div>
-
-                            <div className="flex flex-col sm:flex-row items-start gap-4">
-                                <div className="relative h-32 mb-4">
-                                    <a
-                                        href="https://cdn.vasavong.dev/images/IMG_8260.gif"
-                                        className="absolute text-sm text-white bg-black bg-opacity-50 px-2 py-0.5 rounded-md"
-                                    >
-                                        Open gif
-                                    </a>
-                                    <Image
-                                        src="https://cdn.vasavong.dev/images/IMG_8260.gif"
-                                        width={960}
-                                        height={540}
-                                        alt="Trivia showdown preview"
-                                        className="rounded-md border shadow-sm w-full h-full object-cover"
-                                    />
-                                </div>
-
-                                <p>Trivia showdown is an innovative and engaging project that brings excitement of live, real-time trivia to users through a web application using websockets. The project revolves around hosting trivia games that can be played by users in a vicinity of the LED screen located in the Student Hall for Exploration and Development (&auot;SHED&quot;).</p>
-                            </div>
-
-                            <p className="mt-4">This concept centers on community interaction and engagement.</p>
-
-                            <div className="my-4">
-                                <h2 className="font-medium mb-4">Key Features</h2>
-                                <ol className="list-decimal list-inside pl-4 flex gap-4 flex-col">
-                                    <Feature
-                                        title="Real-time"
-                                        description="Users can participate in trivia game(s) in real-time, creating a dynamic experience. The questions would be presented on the SHED LED screen."
-                                    />
-                                    <Feature
-                                        title="Dynamic LED Screen"
-                                        description="The trivia game(s) would be displayed automatically on the SHED screen as an 'intermission' between the regular content."
-                                    />
-                                    <Feature
-                                        title="Leaderboard"
-                                        description="Users can see their rank and score in real-time on the SHED screen."
-                                    />
-                                </ol>
-                            </div>
-
-                            <p>This refines the traditional trivia game by using the power of real-time interactivity on our most recent LED screen. This project not only brings togetherness, but it turns a simple game of trivia to an adventure for all using technology.</p>
-
-                            <div className="my-4 flex sm:flex-row flex-col gap-4 items-start">
-                                <div className="sm:w-1/2 order-0 sm:order-1 flex-shrink-0">
-                                    <Image
-                                        src="https://cdn.vasavong.dev/images/first_it.png"
-                                        width={1280}
-                                        height={720}
-                                        alt="First iteration preview"
-                                        className="rounded-md border shadow-sm w-full h-full object-cover"
-                                    />
-                                </div>
-                                <div className="sm:w/12 sm:order-0 order-1 flex flex-col">
-                                    <h3 className="font-medium">First Iteration</h3>
-                                    <p className="text-sm">The first iteration of this project was a simple web application that allowed users to join a trivia game and answer questions. However, the questions were displayed on the client side coded fully in HTML, CSS, and Vanilla JS.</p>
-                                    <p className="text-sm mt-3">This iteration allowed for me to grasp the concept and see it was achievable.</p>
-                                    <code className="text-sm text-pink-600 bg-gray-100 p-2 rounded-sm mt-3">
+                            <div className="md:w-1/2">
+                                <h3 className="font-semibold text-xl mb-4">First Iteration</h3>
+                                <p className="text-gray-600 mb-4">
+                                    The initial version was built using HTML, CSS, and Vanilla JS, focusing on core functionality and user interaction. This prototype helped validate the concept and demonstrate its feasibility.
+                                </p>
+                                <div className="bg-white rounded-lg p-4 shadow-sm">
+                                    <code className="text-sm text-pink-600">
                                         {`app.get("/", (req, res) => {
   res.sendFile(__dirname + "/files/index.html")
 })`}
                                     </code>
-                                    <p className="text-sm mt-3">
-                                        By having a file that served as a Server, running the express server, <code className="text-pink-600 bg-gray-100 rounded-sm">index.js</code>, I was able to send an HTML file to represent the interaction screen.
-                                    </p>
                                 </div>
+                                <p className="text-sm text-gray-500 mt-4">
+                                    The Express server setup allowed for simple HTML file serving, establishing the foundation for future development.
+                                </p>
                             </div>
                         </div>
                     </div>
-                </motion.div>
+                </Section>
+
+                <Section className="bg-black text-white rounded-xl p-8 text-center">
+                    <h2 className="font-semibold text-2xl mb-4">Want to Contribute?</h2>
+                    <p className="text-gray-300 mb-6">
+                        This is an open-source project and we welcome contributions from the community.
+                    </p>
+                    <div className="flex justify-center gap-4">
+                        <Link
+                            href="https://github.com/devinvasavong/survey-nextjs"
+                            className="bg-white text-black px-6 py-2 rounded-full hover:bg-gray-100"
+                        >
+                            View on GitHub
+                        </Link>
+                    </div>
+                </Section>
             </div>
         </div>
     );

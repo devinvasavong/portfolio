@@ -51,6 +51,14 @@ const projects = [
         status: ["completed"],
         tech: ["React", "Node.js", "MongoDB"],
         link: "/work/paws"
+    },
+    {
+        id: 4,
+        title: "SmallKDS by Vasavong",
+        description: "Kitchen display system for restaurants with real-time order management, order tracking, and kitchen performance analytics.",
+        status: ["in_progress"],
+        tech: ["Next.js", "Express", "Redis", "PostgreSQL", "Auth0"],
+        link: "/work/smallkds"
     }
 ];
 

@@ -8,7 +8,6 @@ import Navbar from "@/app/components/navbar";
 import { Badge } from '@/components/ui/badge';
 import {
     ArrowLeft,
-    Users,
     Search,
     Shield,
     Layout,

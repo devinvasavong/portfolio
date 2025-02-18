@@ -3,10 +3,21 @@ import Navbar from "@/app/components/navbar";
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Beer, Coffee, LineChart, SoupIcon, Tablet, Timer, TrainTrack, Truck, Users } from "lucide-react";
+import {
+    ArrowLeft,
+    Thermometer,
+    Bell,
+    LineChart,
+    Building2,
+    Truck,
+    Activity,
+    Laptop,
+    Shield,
+    Battery,
+    Signal,
+    AlertTriangle
+} from "lucide-react";
 import Image, { StaticImageData } from "next/image";
-
-import Mockup from '@/app/images/work/smallkds/ipadmockup.jpg'
 
 const Section = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
     <section className={`py-10 ${className}`}>
@@ -26,8 +37,8 @@ const Feature = ({ icon: Icon, title, description }: { icon: React.ElementType, 
         whileHover={{ y: -5 }}
         transition={{ duration: 0.2 }}
     >
-        <div className="p-3 bg-purple-50 rounded-full mb-4">
-            <Icon className="w-6 h-6 text-purple-500" />
+        <div className="p-3 bg-blue-50 rounded-full mb-4">
+            <Icon className="w-6 h-6 text-blue-500" />
         </div>
         <h3 className="font-medium text-lg mb-2">{title}</h3>
         <p className="text-gray-600 text-center text-sm">{description}</p>
@@ -73,15 +84,15 @@ export default function Page() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.3 }}
                     >
-                        <SectionTitle>SmallKDS</SectionTitle>
+                        <SectionTitle>ThermoLink</SectionTitle>
                         <p className="text-gray-600">
-                            A simple and easy-to-use kitchen display system for small restaurants, cafes, and food trucks.
+                            An intelligent temperature monitoring system for healthcare facilities,
+                            pharmacies, and businesses that need to maintain precise temperature control.
                         </p>
-                        <ImageDisplay src={Mockup} alt="SmallKDS iPad Mockup" />
+                        {/* <ImageDisplay alt="ThermoLink Dashboard Interface" /> */}
                     </motion.div>
                 </Section>
 
-                {/* why? */}
                 <Section>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -90,31 +101,12 @@ export default function Page() {
                     >
                         <SectionTitle>Problem Statement</SectionTitle>
                         <p className="text-gray-600">
-                            Many small, developing businesses struggle with the high costs of traditional kitchen display systems.
-                            SmallKDS aims to provide an affordable and easy-to-use alternative for these businesses.
+                            Healthcare facilities and pharmacies face significant challenges in maintaining
+                            precise temperature control for sensitive materials. Traditional monitoring
+                            systems are often complex, expensive, and lack real-time alerting capabilities.
+                            ThermoLink provides an affordable, user-friendly solution that ensures
+                            compliance and prevents costly inventory losses.
                         </p>
-                    </motion.div>
-                </Section>
-
-                <Section>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.6 }}
-                    >
-                        <SectionTitle>User Personas</SectionTitle>
-                        <div className="grid gap-4 grid-col-1 md:grid-cols-2">
-                            <Feature
-                                icon={Users}
-                                title="Restaurant Owners"
-                                description="Owners of small restaurants, cafes, and food trucks who are looking for an affordable and easy-to-use kitchen display system."
-                            />
-                            <Feature
-                                icon={Users}
-                                title="Kitchen Staff"
-                                description="Kitchen staff who need a simple and efficient way to manage orders and communicate with each other."
-                            />
-                        </div>
                     </motion.div>
                 </Section>
 
@@ -127,25 +119,39 @@ export default function Page() {
                         <SectionTitle>Key Features</SectionTitle>
                         <div className="grid md:grid-cols-3 gap-6 mt-8">
                             <Feature
-                                icon={Timer}
-                                title="Real-Time Order Management"
-                                description="View and manage orders in real-time as they come in."
+                                icon={Activity}
+                                title="Real-Time Monitoring"
+                                description="Monitor temperature data in real-time with instant updates and historical tracking."
                             />
                             <Feature
-                                icon={TrainTrack}
-                                title="Order Tracking"
-                                description="Track the status of each order and notify customers when their order is ready."
+                                icon={AlertTriangle}
+                                title="Smart Alerts"
+                                description="Receive immediate notifications when temperatures fall outside acceptable ranges."
                             />
                             <Feature
                                 icon={LineChart}
-                                title="Performance Analytics"
-                                description="Track kitchen performance and identify bottlenecks in order processing."
+                                title="Analytics Dashboard"
+                                description="Visualize temperature trends and analyze performance with intuitive graphs."
+                            />
+                            <Feature
+                                icon={Shield}
+                                title="Compliance Ready"
+                                description="Meet regulatory requirements with comprehensive reporting and audit trails."
+                            />
+                            <Feature
+                                icon={Signal}
+                                title="Reliable Connectivity"
+                                description="Monitor sensor health and connectivity status to ensure continuous operation."
+                            />
+                            <Feature
+                                icon={Battery}
+                                title="Battery Management"
+                                description="Track sensor battery levels and receive low battery alerts before failure."
                             />
                         </div>
                     </motion.div>
                 </Section>
 
-                {/* use cases */}
                 <Section>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
@@ -155,45 +161,43 @@ export default function Page() {
                         <SectionTitle>Use Cases</SectionTitle>
                         <div className="grid md:grid-cols-2 gap-6 mt-8">
                             <Feature
+                                icon={Building2}
+                                title="Pharmacies"
+                                description="Monitor medication storage conditions and maintain regulatory compliance."
+                            />
+                            <Feature
+                                icon={Thermometer}
+                                title="Healthcare Facilities"
+                                description="Track temperature-sensitive medical supplies and equipment."
+                            />
+                            <Feature
                                 icon={Truck}
-                                title="Food Truck"
-                                description="A food truck owner uses SmallKDS to manage orders and communicate with their kitchen staff."
+                                title="Cold Chain Logistics"
+                                description="Monitor temperature during transportation and storage of sensitive materials."
                             />
                             <Feature
-                                icon={Coffee}
-                                title="Cafe"
-                                description="A cafe owner uses SmallKDS to track orders and improve their kitchen performance."
-                            />
-                            <Feature
-                                icon={Tablet}
-                                title="Catering"
-                                description="A catering company uses SmallKDS to manage large orders and track their progress."
-                            />
-                            <Feature
-                                icon={SoupIcon}
-                                title="Restaurant"
-                                description="A restaurant owner uses SmallKDS to streamline their kitchen operations and improve efficiency."
-                            />
-                            <Feature
-                                icon={Beer}
-                                title="Bar, Pub, Brewery"
-                                description="A bar owner uses SmallKDS to manage drink orders and improve their service speed."
+                                icon={Laptop}
+                                title="Research Labs"
+                                description="Maintain precise temperature control for research materials and specimens."
                             />
                         </div>
                     </motion.div>
                 </Section>
 
-                {/* interested in  */}
                 <Section>
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                     >
-                        <SectionTitle>Interested in SmallKDS?</SectionTitle>
+                        <SectionTitle>Interested in ThermoLink?</SectionTitle>
                         <p className="text-gray-600">
-                            SmallKDS is currently in development and will be available soon. If you&apos;re interested in learning more or trying out the system, please reach out to me at <a href="mailto:devin@vasavong.com?subject=SmallKDS Inquiry">
-                                devin@vasavong.com</a>.
+                            ThermoLink is currently in development and will be launching soon.
+                            If you&apos;re interested in learning more about our temperature monitoring
+                            solution or would like to schedule a demo, please contact us at{' '}
+                            <a href="mailto:contact@thermol.ink" className="text-blue-600 hover:underline">
+                                contact@thermol.ink
+                            </a>.
                         </p>
                     </motion.div>
                 </Section>

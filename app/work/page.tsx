@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Card } from '@/components/ui/card';
-import { motion } from 'framer-motion';
+import { m, motion } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import Navbar from '../components/navbar';
@@ -59,6 +59,14 @@ const projects = [
         status: ["in_progress"],
         tech: ["Next.js", "Express", "Redis", "PostgreSQL", "Auth0"],
         link: "/work/smallkds"
+    },
+    {
+        id: 5,
+        title: "ThermoLink - Smart Thermostat",
+        description: "Intelligent temperature monitoring system for healthcare facilities, pharmacies, and businesses that need to maintain precise temperature control.",
+        status: ["in_progress"],
+        tech: ["Microcontroller", "IoT", "React", "Firebase"],
+        link: "/work/thermolink"
     }
 ];
 

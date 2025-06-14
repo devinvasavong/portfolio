@@ -7,7 +7,7 @@ function Card({
     title,
     link,
     caption
-} : {
+}: {
     title: String,
     link: string,
     caption?: string
@@ -17,7 +17,7 @@ function Card({
             <div className="text-center bg-gray-50 hover:bg-gray-200 rounded-lg transition-colors duration-300 py-3">
                 {title}
             </div>
-            { caption && <p className="text-opacity-0 hidden group-hover:block group-hover:text-opacity-100 text-xs text-center pt-3 transition-all duration-300">{caption}</p>}
+            {caption && <p className="text-opacity-0 hidden group-hover:block group-hover:text-opacity-100 text-xs text-center pt-3 transition-all duration-300">{caption}</p>}
         </a>
     )
 }
@@ -38,7 +38,7 @@ export default function Links() {
 
     return (
         <div className="mx-auto max-w-5xl px-10">
-            <Navbar scrolled={scrolled} />
+            <Navbar />
             <div className="py-10">
                 <div className="grid-cols-1 flex flex-col gap-2 transition-all duration-300">
                     <Card title="Main Page" link="https://vasavong.dev/" />

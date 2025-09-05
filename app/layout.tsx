@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} mx-auto max-w-xl py-16 px-4 md:px-0`}>
+      <body className={`${inter.className} mx-auto max-w-xl py-16 px-8 md:px-0`}>
         <GlobalHeader />
         {children}
       </body>

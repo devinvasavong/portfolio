@@ -1,7 +1,6 @@
 "use client";
 import Link from 'next/link';
 import * as React from 'react';
-import Navbar from '../components/navbar';
 
 function Card({
     title,
@@ -38,7 +37,6 @@ export default function Links() {
 
     return (
         <div className="mx-auto max-w-5xl px-10">
-            <Navbar />
             <div className="py-10">
                 <div className="grid-cols-1 flex flex-col gap-2 transition-all duration-300">
                     <Card title="Main Page" link="https://vasavong.dev/" />

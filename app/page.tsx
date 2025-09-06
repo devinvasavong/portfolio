@@ -9,6 +9,13 @@ const PROJECT = [
         from: "2025",
         to: "Present",
         type: "SaaS"
+    },
+    {
+        href: "/boba-mi",
+        name: "Boba Mi",
+        from: "2025",
+        to: "Present",
+        type: "Web App"
     }
 ]
 

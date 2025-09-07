@@ -1,5 +1,88 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import FirstPrototype from "@/public/images/boba-mi/boba-mi-first-prototype.png";
+import MenuPrototype from "@/public/images/boba-mi/boba-mi-menu-prototype.png"
+import BobaMiNewLanding from "@/public/images/boba-mi/boba-mi-new-landing-page.png"
+import BobaMiNewMenu from "@/public/images/boba-mi/boba-mi-new-menu.png"
+import Image from "next/image";
+
+type Shot = { src: any; alt: string; caption?: string };
+const shots: Shot[] = [
+    { src: FirstPrototype, alt: "First Prototype", caption: "First menu prototype displayed all items." },
+    { src: MenuPrototype, alt: "Menu Prototype", caption: "Later simplified with categories for easier scanning." },
+    { src: BobaMiNewLanding, alt: "Boba Mi New Landing Page", caption: "Final landing with simplified categories + essentials." },
+    { src: BobaMiNewMenu, alt: "Boba Mi New Menu Page", caption: "Final menu with clear categories and readable layout." },
+];
+
+function MobileShots({ shots }: { shots: { src: any; alt: string; caption?: string }[] }) {
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const el = containerRef.current;
+        if (!el) return;
+
+        const first = el.querySelector<HTMLElement>('[data-nudge="1"]');
+        if (!first) return;
+
+        // stop the hint on any interaction
+        const stop = () => first.classList.remove("nudge-pulse");
+        el.addEventListener("scroll", stop, { passive: true });
+        el.addEventListener("pointerdown", stop, { passive: true });
+        el.addEventListener("touchstart", stop, { passive: true });
+        el.addEventListener("wheel", stop, { passive: true });
+
+        return () => {
+            el.removeEventListener("scroll", stop);
+            el.removeEventListener("pointerdown", stop);
+            el.removeEventListener("touchstart", stop);
+            el.removeEventListener("wheel", stop);
+        };
+    }, []);
+
+    return (
+        <div
+            ref={containerRef}
+            className="relative md:hidden mt-4 overflow-x-auto pb-2 scroll-smooth overscroll-x-contain"
+        >
+            <div className="flex gap-4 snap-x snap-mandatory px-1">
+                {shots.map((s, i) => (
+                    <figure
+                        key={i}
+                        data-nudge={i === 0 ? "1" : "0"}
+                        className={`snap-center shrink-0 w-[85vw] ${i === 0 ? "nudge-pulse" : ""}`}
+                    >
+                        <Image src={s.src} alt={s.alt} className="rounded-lg shadow-md w-full h-auto" />
+                        {s.caption && <figcaption className="text-gray-500 text-sm mt-2">{s.caption}</figcaption>}
+                    </figure>
+                ))}
+            </div>
+
+            {/* optional: tiny "Swipe →" hint that fades out */}
+            <p className="pointer-events-none absolute -bottom-1 left-1/2 -translate-x-1/2 text-[11px] text-gray-400 animate-fadeout">
+                Swipe to see more →
+            </p>
+
+            <style jsx global>{`
+        @keyframes nudgeX {
+          0% { transform: translateX(0); }
+          50% { transform: translateX(-12px); }
+          100% { transform: translateX(0); }
+        }
+        .nudge-pulse {
+          animation: nudgeX 1.4s ease-in-out 0.6s infinite;
+        }
+        @keyframes fadeoutOnce {
+          0% { opacity: 0; }
+          15% { opacity: 1; }
+          100% { opacity: 0; }
+        }
+        .animate-fadeout {
+          animation: fadeoutOnce 2.2s ease 0.6s 1 forwards;
+        }
+      `}</style>
+        </div>
+    );
+}
 
 export default function BobaMiPage() {
     const [isVisible, setIsVisible] = useState(false);
@@ -44,6 +127,38 @@ export default function BobaMiPage() {
                     <li><span className="font-medium">Build:</span> React + Tailwind; content structured for quick updates.</li>
                     <li><span className="font-medium">Launch:</span> Deployed to a managed host with clean previews for feedback.</li>
                 </ol>
+            </div>
+
+            <div
+                id="design"
+                className={`mt-8 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-3 blur-sm'} transition-all duration-1000 ease-out will-change-transform`}
+                style={{ transitionDelay: '260ms' }}
+            >
+                <h2 className="font-roca text-lg font-semibold">Design</h2>
+                <p className="text-gray-700 mt-2">Created high-fidelity mockups and prototypes to visualize the design.</p>
+
+                {/* Mobile: horizontal scroll with snap */}
+                <MobileShots shots={shots} />
+
+                {/* Desktop+: 2-col grid that exceeds container width */}
+                <div className="hidden md:block mt-6">
+                    {/* Bleed beyond container (120%) */}
+                    <div className="w-[120%] -ml-[10%]">
+                        <div className="grid grid-cols-2 gap-6">
+                            {shots.map((s, i) => (
+                                <figure key={i}>
+                                    <Image
+                                        src={s.src}
+                                        alt={s.alt}
+                                        className="rounded-lg shadow-md w-full h-auto"
+                                        priority={i === 0}
+                                    />
+                                    {s.caption && <figcaption className="text-gray-500 text-sm mt-2">{s.caption}</figcaption>}
+                                </figure>
+                            ))}
+                        </div>
+                    </div>
+                </div>
             </div>
 
             <div id="impact" className={`mt-8 ${isVisible ? 'opacity-100 translate-y-0 blur-0' : 'opacity-0 translate-y-3 blur-sm'} transition-all duration-1000 ease-out will-change-transform`} style={{ transitionDelay: '260ms' }}>

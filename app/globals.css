@@ -82,6 +82,26 @@
   }
 }
 
+@keyframes nudge {
+  0% {
+    scroll-snap-type: x mandatory;
+    transform: translateX(0);
+  }
+  30% {
+    transform: translateX(-32px);
+  }
+  60% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-nudge {
+  animation: nudge 1.2s ease-out 0.6s 1;
+}
+
 @layer base {
   * {
     @apply border-border;

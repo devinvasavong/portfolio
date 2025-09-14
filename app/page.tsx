@@ -16,6 +16,13 @@ const PROJECT = [
         from: "2025",
         to: "Present",
         type: "Web App"
+    },
+    {
+        href: "pickup-queue-inspired-by-crumbl",
+        name: "Pickup Queue",
+        from: "2025",
+        to: "2025",
+        type: "HTML, CSS, JS"
     }
 ]
 

@@ -175,9 +175,9 @@ export default function PickupQueuePage() {
           href="https://codepen.io/devinvasavong/full/gOjbERp"
           target="_blank"
           rel="noreferrer"
-          className="inline-block mt-4 px-4 py-2 rounded-md bg-black text-white hover:bg-gray-900 transition"
+          className="bg-gray-100 hover:bg-gray-200 text-gray-500 px-2 py-1 rounded-full transition-colors duration-300 text-sm inline-block mt-4"
         >
-          Open on CodePen →
+          Open on CodePen
         </a>
       </FadeIn>
     </div>
